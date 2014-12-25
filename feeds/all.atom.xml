@@ -4,14 +4,7 @@ well spoken and explains things very clearly.&lt;br /&gt;
 Now as a science student I think this is a very important ability that I
 still need to improve on. By setting up this blog I hope to force myself
 to explain and share with others the mini-projects / ideas that I am
-working / have worked on. &lt;/p&gt;</summary></entry><entry><title>Using Virtualenv for safeguarding research project dependencies</title><link href="http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html" rel="alternate"></link><updated>2014-12-24T00:00:00-08:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</id><summary type="html">&lt;p&gt;This original post is on my &lt;a href="http://karenyng.wordpress.com/2014/10/12/using-virtualenv-for-safeguarding-research-project-dependencies/"&gt;wordpress blog&lt;/a&gt; but I have to say I do not like
-the wordpress interface and how it usually messes up my symbols. 
-I think there is a way to download the wordpress content as
-&lt;a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/"&gt;XML&lt;/a&gt; then
-convert the content directly to md format but I'm just going to copy and
-paste to test how the layout works for this particular post.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;It’s a tragedy whenever a code breaks after an “upgrade”.
+working / have worked on. &lt;/p&gt;</summary></entry><entry><title>Using Virtualenv for safeguarding research project dependencies</title><link href="http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html" rel="alternate"></link><updated>2014-12-24T00:00:00-08:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</id><summary type="html">&lt;p&gt;It’s a tragedy whenever a code breaks after an “upgrade”.
 I have recently started using virtualenv for python to prevent my
 macport/apt-get
 updates from messing up with the code of my research project.
@@ -106,4 +99,11 @@ A lazy way is to just have pip list all the python packages you have installed&l
 
 &lt;p&gt;now whenever you switch to the appropriate directory,
 the virtual env will be activated for you.
-$PATH_TO_AUTOENV would better off be an absolute path than a relative path since the script will work also if your are in the children directory with an absolute path.&lt;/p&gt;</summary><category term="Python"></category><category term="reproducible science"></category></entry></feed>
+$PATH_TO_AUTOENV would better off be an absolute path than a relative path since the script will work also if your are in the children directory with an absolute path.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;This original post is on my &lt;a href="http://karenyng.wordpress.com/2014/10/12/using-virtualenv-for-safeguarding-research-project-dependencies/"&gt;wordpress blog&lt;/a&gt; but I have to say I do not like
+the wordpress interface and how it usually messes up my symbols. 
+I think there is a way to download the wordpress content as
+&lt;a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/"&gt;XML&lt;/a&gt; then
+convert the content directly to md format but I'm just going to copy and
+paste to test how the layout works for this particular post.&lt;/p&gt;</summary><category term="Python"></category><category term="reproducible science"></category></entry></feed>
