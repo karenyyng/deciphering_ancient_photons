@@ -63,7 +63,7 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="../new-year-resolution-1st-post.html"><h1>New year resolution + 1st post</h1></a>
+            <a href="../using-virtualenv-for-safeguarding-research-project-dependencies.html"><h1>Using Virtualenv for safeguarding research project dependencies</h1></a>
 Wed 24 December 2014
 
 by <a class="url fn" href="../author/k-y-ng.html">K. Y. Ng</a>
@@ -73,12 +73,109 @@ by <a class="url fn" href="../author/k-y-ng.html">K. Y. Ng</a>
  
         </div>
         
-        <div><p>One thing that I greatly admire my advisor, Prof. D. Wittman, for is that he is extremely
-well spoken and explains things very clearly.<br />
-Now as a science student I think this is a very important ability that I
-still need to improve on. By setting up this blog I hope to force myself
-to explain and share with others the mini-projects / ideas that I am
-working / have worked on. </p></div>
+        <div><p>It’s a tragedy whenever a code breaks after an “upgrade”.
+I have recently started using virtualenv for python to prevent my
+macport/apt-get
+updates from messing up with the code of my research project.
+And before I forget how to set it up correctly,
+I should write about it:</p>
+<p>This goes without saying is that you should have virtualenv installed.</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">virtualenv</span><span class="x"> --no-site-packages ENVNAME</span>
+</pre></div>
+
+
+<p>creating virtualenv this way will instruct that the paths inside the virtual env not to include path the system wide python packages
+i.e. whatever python packages installed to the PATH variable in the shell configuration file (e.g. .bashrc / .bash_profile) will be ignored
+Note if you have python packages path set as part of PYTHONPATH, your virtualenv will not work properly so you will want to remove any system wide python packages from your PYTHONPATH.
+(using –no-site-packages seems to be the default behavior for virtualenv but let me just mention that)</p>
+<p>Once the command above is done executing, a folder with ENVNAME will be created that has the structure for installing its own set of python packages.</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">ls</span><span class="x"> ENVNAME</span>
+</pre></div>
+
+
+<p>will show you the following</p>
+<div class="highlight"><pre>bin include lib share
+</pre></div>
+
+
+<p>Next, you want to figure out what packages to install and what not to install.
+A lazy way is to just have pip list all the python packages you have installed</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">pip</span><span class="x"> freeze &gt; packages.txt</span>
+</pre></div>
+
+
+<p>This is a bad idea if you have packages installed from external source like git / other websites.</p>
+<p>Now let’s try to activate the virtual env:</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">source</span><span class="x"> APPROPRIATE_PATH/ENVNAME/bin/activate</span>
+</pre></div>
+
+
+<p>Then you terminal prompt will change to</p>
+<div class="highlight"><pre>(ENVNAME)$
+</pre></div>
+
+
+<p>check if the pip inside this environment is a local version:</p>
+<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">which</span><span class="x"> pip</span>
+</pre></div>
+
+
+<p>should show</p>
+<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">ENVNAME</span><span class="x">/bin/pip</span>
+</pre></div>
+
+
+<p>Now you can reinstall your packages within this local environment:</p>
+<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">pip</span><span class="x"> install -r packages.txt</span>
+</pre></div>
+
+
+<p>which may or may not work well depending on if you have external source of packages.</p>
+<p>Let’s say you are like me and have installed some python packages from non-conventional sources, one hackish way to make sure those will be installed properly in the virtualenv is to just copy the directory containing installed python packages to the local environment:</p>
+<div class="highlight"><pre>(ENVNAME)$ sudo cp -r PATH1 APPROPRAITE_PATH/ENVNAME/python2.7/site-packages
+</pre></div>
+
+
+<p>where PATH1 is</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">echo</span><span class="x"> PATH1</span>
+<span class="x">&quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&quot;</span>
+</pre></div>
+
+
+<p>Now you can check if the library versions are alright:</p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">ENVNAME</span><span class="p">)</span><span class="err">$</span> <span class="n">ipython</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">astropy</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">print</span> <span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s">&#39;0.4&#39;</span>
+</pre></div>
+
+
+<p>while you can check that the system wide version of the library has a different version:</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">ipython</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">astropy</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">print</span> <span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s">&#39;0.4.1&#39;</span>
+</pre></div>
+
+
+<p>Last bit of this post is about being lazy and having the virtualenv automatically activate itself:</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">sudo</span><span class="x"> pip install autoenv</span>
+<span class="p">$</span><span class="nv">echo</span><span class="x"> &quot;</span><span class="p">$</span><span class="nv">PATH_TO_AUTOENV</span><span class="x">/activate.sh&quot; &gt;&gt; ~/.bash_profile</span>
+<span class="p">$</span><span class="nv">cd</span><span class="x"> </span><span class="p">$</span><span class="nv">APPROPRIATE_PATH</span><span class="x">/ </span><span class="err">#</span><span class="x"> this is where ENVNAME lives</span>
+<span class="p">$</span><span class="nv">echo</span><span class="x"> &quot;source ENVNAME/bin/activate&quot; &gt; .env</span>
+</pre></div>
+
+
+<p>now whenever you switch to the appropriate directory,
+the virtual env will be activated for you.
+$PATH_TO_AUTOENV would better off be an absolute path than a relative path since the script will work also if your are in the children directory with an absolute path.</p>
+<hr />
+<p>This original post is on my <a href="http://karenyng.wordpress.com/2014/10/12/using-virtualenv-for-safeguarding-research-project-dependencies/">wordpress blog</a> but I have to say I do not like
+the wordpress interface and how it usually messes up my symbols. 
+I think there is a way to download the wordpress content as
+<a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/">XML</a> then
+convert the content directly to md format but I'm just going to copy and
+paste to test how the layout works for this particular post.</p></div>
         <hr />
     </div>
 		
@@ -89,7 +186,7 @@ working / have worked on. </p></div>
  
 
     <div class='article'>
-        <a href="../using-virtualenv-for-safeguarding-research-project-dependencies.html"><h2>Using Virtualenv for safeguarding research project dependencies</h2></a>
+        <a href="../new-year-resolution-1st-post.html"><h2>New year resolution + 1st post</h2></a>
         <div class= "well small"> Wed 24 December 2014
 
 by <a class="url fn" href="../author/k-y-ng.html">K. Y. Ng</a>
@@ -97,12 +194,10 @@ by <a class="url fn" href="../author/k-y-ng.html">K. Y. Ng</a>
 
 
  </div>
-        <div class="summary"><p>It’s a tragedy whenever a code breaks after an “upgrade”.
-I have recently started using virtualenv for python to prevent my
-macport/apt-get
-updates from messing up with the code of my research project.
-And before I forget how to set it up correctly,
-I should write about it ...</p> <a class="btn btn-info xsmall" href="../using-virtualenv-for-safeguarding-research-project-dependencies.html">read more</a></div>
+        <div class="summary"><p>One thing that I greatly admire my advisor, Prof. D. Wittman, for is that he is extremely
+well spoken and explains things very clearly.<br />
+Now as a science student I think this is a very important ability that I
+still need to improve on. By setting up this blog I ...</p> <a class="btn btn-info xsmall" href="../new-year-resolution-1st-post.html">read more</a></div>
     </div>	
 				
 <div class="pagination">
