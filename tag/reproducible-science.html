@@ -1,269 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+>
 <head>
+    <title>reproducible science - Deciphering ancient photons</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>Deciphering ancient photons</title>
-    <meta name="description" content="">
-    <meta name="author" content="Karen Y. Ng">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="../theme/html5.js"></script>
-    <![endif]-->
 
-    <!-- Le styles -->
-    <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../theme/local.css" rel="stylesheet">
-    <link href="../theme/pygments.css" rel="stylesheet">
 
-    <!-- So Firefox can bookmark->"abo this site" -->
-        <link href="feeds/all.atom.xml" rel="alternate" title="Deciphering ancient photons" type="application/atom+xml">
+
+    <meta name="author" content="Karen Y. Ng" />
+    <meta name="keywords" content="reproducible science" />
+
+    <!-- Enable latex plugin -->
+
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Deciphering ancient photons" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Deciphering ancient photons"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="Deciphering ancient photons"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+
+        <link href="../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Deciphering ancient photons ATOM Feed"/>
+
+
 
 </head>
-
 <body>
 
-<div class="navbar">
-    <div class="navbar-inner">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
-
-         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-         </a>
-
-        <a class="brand" href="..">Deciphering ancient photons</a>
-
-        <div class="nav-collapse">
-        <ul class="nav">
-            <li><a href="/archives.html">Posts</a></li>
-            <li><a href="/pages/about.html">About</a></li>
-            <li><a href="/pages/projects.html">Projects</a></li>
-            <li><a href="/pages/talks.html">Talks</a></li>
-            <li><a href="/pages/trips.html">Trips</a></li>
-            
-        </ul>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+Deciphering ancient photons            </a>
         </div>
-        
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/archives.html">Posts</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/projects.html">Projects</a></li>
+                    <li><a href="/pages/talks.html">Talks</a></li>
+                    <li><a href="/pages/trips.html">Trips</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-    </div>
-</div>
+</div> <!-- /.navbar -->
 
 <div class="container">
-    <div class="content">
     <div class="row">
+        <div class="col-sm-9">
 
-        <div class="span9">
-        
-
-        
-
-
-    <div class='article'>
-        <div class="content-title">
-            <a href="../using-virtualenv-for-safeguarding-research-project-dependencies.html"><h1>Using Virtualenv for safeguarding research project dependencies</h1></a>
-Wed 24 December 2014
-
-by <a class="url fn" href="../author/k-y-ng.html">K. Y. Ng</a>
- 
-
-
- 
-        </div>
-        
-        <div><p>It’s a tragedy whenever a code breaks after an “upgrade”.
+            <article>
+                <h2><a href="../using-virtualenv-for-safeguarding-research-project-dependencies.html">Using Virtualenv for safeguarding research project dependencies</a></h2>
+                <div class="summary"><p>It’s a tragedy whenever a code breaks after an “upgrade”.
 I have recently started using virtualenv for python to prevent my
 macport/apt-get
 updates from messing up with the code of my research project.
 And before I forget how to set it up correctly,
-I should write about it:</p>
-<p>This goes without saying is that you should have virtualenv installed.</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">virtualenv</span><span class="x"> --no-site-packages ENVNAME</span>
-</pre></div>
+I should write about it ...</p>
+                    <a class="btn btn-default btn-xs" href="../using-virtualenv-for-safeguarding-research-project-dependencies.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
-
-<p>creating virtualenv this way will instruct that the paths inside the virtual env not to include path the system wide python packages
-i.e. whatever python packages installed to the PATH variable in the shell configuration file (e.g. .bashrc / .bash_profile) will be ignored
-Note if you have python packages path set as part of PYTHONPATH, your virtualenv will not work properly so you will want to remove any system wide python packages from your PYTHONPATH.
-(using –no-site-packages seems to be the default behavior for virtualenv but let me just mention that)</p>
-<p>Once the command above is done executing, a folder with ENVNAME will be created that has the structure for installing its own set of python packages.</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">ls</span><span class="x"> ENVNAME</span>
-</pre></div>
-
-
-<p>will show you the following</p>
-<div class="highlight"><pre>bin include lib share
-</pre></div>
-
-
-<p>Next, you want to figure out what packages to install and what not to install.
-A lazy way is to just have pip list all the python packages you have installed</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">pip</span><span class="x"> freeze &gt; packages.txt</span>
-</pre></div>
-
-
-<p>This is a bad idea if you have packages installed from external source like git / other websites.</p>
-<p>Now let’s try to activate the virtual env:</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">source</span><span class="x"> APPROPRIATE_PATH/ENVNAME/bin/activate</span>
-</pre></div>
-
-
-<p>Then you terminal prompt will change to</p>
-<div class="highlight"><pre>(ENVNAME)$
-</pre></div>
-
-
-<p>check if the pip inside this environment is a local version:</p>
-<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">which</span><span class="x"> pip</span>
-</pre></div>
-
-
-<p>should show</p>
-<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">ENVNAME</span><span class="x">/bin/pip</span>
-</pre></div>
-
-
-<p>Now you can reinstall your packages within this local environment:</p>
-<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">pip</span><span class="x"> install -r packages.txt</span>
-</pre></div>
-
-
-<p>which may or may not work well depending on if you have external source of packages.</p>
-<p>Let’s say you are like me and have installed some python packages from non-conventional sources, one hackish way to make sure those will be installed properly in the virtualenv is to just copy the directory containing installed python packages to the local environment:</p>
-<div class="highlight"><pre>(ENVNAME)$ sudo cp -r PATH1 APPROPRAITE_PATH/ENVNAME/python2.7/site-packages
-</pre></div>
-
-
-<p>where PATH1 is</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">echo</span><span class="x"> PATH1</span>
-<span class="x">&quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&quot;</span>
-</pre></div>
-
-
-<p>Now you can check if the library versions are alright:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">ENVNAME</span><span class="p">)</span><span class="err">$</span> <span class="n">ipython</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">astropy</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">print</span> <span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s">&#39;0.4&#39;</span>
-</pre></div>
-
-
-<p>while you can check that the system wide version of the library has a different version:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">ipython</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">astropy</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">print</span> <span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s">&#39;0.4.1&#39;</span>
-</pre></div>
-
-
-<p>Last bit of this post is about being lazy and having the virtualenv automatically activate itself:</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">sudo</span><span class="x"> pip install autoenv</span>
-<span class="p">$</span><span class="nv">echo</span><span class="x"> &quot;</span><span class="p">$</span><span class="nv">PATH_TO_AUTOENV</span><span class="x">/activate.sh&quot; &gt;&gt; ~/.bash_profile</span>
-<span class="p">$</span><span class="nv">cd</span><span class="x"> </span><span class="p">$</span><span class="nv">APPROPRIATE_PATH</span><span class="x">/ </span><span class="err">#</span><span class="x"> this is where ENVNAME lives</span>
-<span class="p">$</span><span class="nv">echo</span><span class="x"> &quot;source ENVNAME/bin/activate&quot; &gt; .env</span>
-</pre></div>
-
-
-<p>now whenever you switch to the appropriate directory,
-the virtual env will be activated for you.
-$PATH_TO_AUTOENV would better off be an absolute path than a relative path since the script will work also if your are in the children directory with an absolute path.</p>
-<hr />
-<p>This original post is on my <a href="http://karenyng.wordpress.com/2014/10/12/using-virtualenv-for-safeguarding-research-project-dependencies/">wordpress blog</a> but I have to say I do not like
-the wordpress interface and how it usually messes up my symbols. 
-I think there is a way to download the wordpress content as
-<a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/">XML</a> then
-convert the content directly to md format but I'm just going to copy and
-paste to test how the layout works for this particular post.</p></div>
-        <hr />
-    </div>
-		
-<div class="pagination">
-<ul>
-    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
-
-    <li class="active"><a href="../tag/reproducible-science.html">1</a></li>
-
-    <li class="next disabled"><a href="#">&rarr; Next</a></li>
-
-</ul>
-</div>
- 
-  
         </div>
-        
-        <div class="span3">
+        <div class="col-sm-3 well well-sm" id="sidebar">
 
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Site
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                    <li class="list-group-item"><a href="http://www.github.com/karenyyng"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+                    <li class="list-group-item"><a href="http://www.twitter.com/karenyng"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                    <li class="list-group-item"><a href="https://plus.google.com/+KarenYinYeeNg"><i class="fa fa-google-plus-square fa-lg"></i> Google+</a></li>
+                    <li class="list-group-item"><a href="http://www.bitbucket.com/karenyng"><i class="fa fa-bitbucket-square fa-lg"></i> Bitbucket</a></li>
+                  </ul>
                 </li>
-            
-                <li><a href="../">Archives</a>
-                <li><a href="../tags.html">Tags</a>
 
 
 
-                <li><a href="http://karenyyng.github.io/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+                <li class="list-group-item"><a href="../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group " id="tags">
+                        <li class="list-group-item tag-4">
+                            <a href="../tag/reproducible-science.html">
+                                reproducible science
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="../tag/python.html">
+                                Python
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://www.mergingclustercollaboration.org/" target="_blank">
+                MC^2 - Merging Cluster Collboration
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://astrobites.com/" target="_blank">
+                Astrobites
+            </a>
+        </li>
+      </ul>
+    </li>
 
-            </ul>
-            </div>
+        </ul>
+    </section>
 
-
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Categories
-                </li>
-                
-                <li><a href="../category/personal-goals.html">Personal goals</a></li>
-                <li><a href="../category/python.html">Python</a></li>
-                   
-            </ul>
-            </div>
-
-
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Links
-                </li>
-            
-                <li><a href="http://www.mergingclustercollaboration.org/">MC^2 - Merging Cluster Collboration</a></li>
-                <li><a href="http://astrobites.com/">Astrobites</a></li>
-            </ul>
-            </div>
-
-
-            <div class="social">
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Social
-                </li>
-           
-                <li><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile">LinkedIn</a></li>
-                <li><a href="http://www.github.com/karenyyng">GitHub</a></li>
-                <li><a href="http://www.twitter.com/karenyng">Twitter</a></li>
-                <li><a href="https://plus.google.com/+KarenYinYeeNg">Google+</a></li>
-                <li><a href="http://www.bitbucket.com/karenyng">Bitbucket</a></li>
-            </ul>
-            </div>
-            </div>
-
-        </div>  
-    </div>     </div> 
+</aside>        </div>
+    </div>
+</div>
 <footer>
-<br />
-<p><a href="..">Deciphering ancient photons</a> &copy; Karen Y. Ng 2012</p>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 Karen Y. Ng
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
 </footer>
+<script src="../theme/js/jquery.min.js"></script>
 
-</div> <!-- /container -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
- 
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'decipheringancientphotons'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
 </body>
 </html>
