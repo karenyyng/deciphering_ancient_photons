@@ -14,13 +14,13 @@
 
         <meta name="author" content="K. Y. Ng" />
         <meta name="keywords" content="Python,reproducible science" />
-        <meta name="description" content="It’s a tragedy whenever a code breaks after an “upgrade”. I have recently started using virtualenv for python to prevent my macport/apt-get updates from messing up with the code of my research project. And before I forget how to set it up correctly, I should write about it ..." />
+        <meta name="description" content="Why virtualenv It’s a tragedy whenever a code breaks after a software “update”. I have recently started using virtualenv for python to prevent my macport / apt-get updates from messing up the code of my research projects. And before I forget how to set it up correctly, I should write ..." />
 
         <meta property="og:site_name" content="Deciphering ancient photons" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Using Virtualenv for safeguarding research project dependencies"/>
         <meta property="og:url" content="http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html"/>
-        <meta property="og:description" content="It’s a tragedy whenever a code breaks after an “upgrade”. I have recently started using virtualenv for python to prevent my macport/apt-get updates from messing up with the code of my research project. And before I forget how to set it up correctly, I should write about it ..."/>
+        <meta property="og:description" content="Why virtualenv It’s a tragedy whenever a code breaks after a software “update”. I have recently started using virtualenv for python to prevent my macport / apt-get updates from messing up the code of my research projects. And before I forget how to set it up correctly, I should write ..."/>
         <meta property="article:published_time" content="2014-12-24" />
             <meta property="article:section" content="Python" />
             <meta property="article:tag" content="Python" />
@@ -55,10 +55,21 @@ Deciphering ancient photons            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="/pages/about.html">About</a></li>
-                    <li><a href="/pages/projects.html">Projects</a></li>
-                    <li><a href="/pages/talks.html">Talks</a></li>
-                    <li><a href="/pages/trips.html">Trips</a></li>
+                         <li><a href="http://karenyyng.github.io/pages/about.html">
+                             About
+                          </a></li>
+                         <li><a href="http://karenyyng.github.io/pages/projects.html">
+                             Projects
+                          </a></li>
+                         <li><a href="http://karenyyng.github.io/pages/publications.html">
+                             Publications
+                          </a></li>
+                         <li><a href="http://karenyyng.github.io/pages/talks.html">
+                             Talks
+                          </a></li>
+                         <li><a href="http://karenyyng.github.io/pages/trips.html">
+                             Trips
+                          </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="http://karenyyng.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
@@ -102,40 +113,54 @@ Deciphering ancient photons            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>It’s a tragedy whenever a code breaks after an “upgrade”.
+                <h3>Why virtualenv</h3>
+<p>It’s a tragedy whenever a code breaks after a software “update”.
 I have recently started using virtualenv for python to prevent my
-macport/apt-get
-updates from messing up with the code of my research project.
+macport / apt-get
+updates from messing up the code of my research projects.
 And before I forget how to set it up correctly,
 I should write about it:</p>
-<p>This goes without saying is that you should have virtualenv installed.</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">virtualenv</span><span class="x"> --no-site-packages ENVNAME</span>
+<h3>Prerequisites</h3>
+<p>I will use python 2.7 for this post.
+You should also have   </p>
+<ul>
+<li>py27-virtualenv</li>
+<li>pip </li>
+</ul>
+<p>installed, either with pip or macport or apt-get or if you like, from
+source.
+I imagine you can replace pip with easy_install easily.</p>
+<h3>How to create virtualenv</h3>
+<div class="highlight"><pre><span class="nv">$ </span>virtualenv-27 --no-site-packages ENVNAME
 </pre></div>
 
 
 <p>creating virtualenv this way will instruct that the paths inside the virtual env not to include path the system wide python packages
-i.e. whatever python packages installed to the PATH variable in the shell configuration file (e.g. .bashrc / .bash_profile) will be ignored
-Note if you have python packages path set as part of PYTHONPATH, your virtualenv will not work properly so you will want to remove any system wide python packages from your PYTHONPATH.
+i.e. whatever python packages installed to the PATH variable in the shell configuration file (e.g. .bashrc / .bash_profile) will be ignored</p>
+<blockquote>
+<h4>Caveats</h4>
+<p>Note if you have python packages path set as part of PYTHONPATH, your virtualenv will not work properly so you will want to remove any system wide python packages from your PYTHONPATH.
 (using –no-site-packages seems to be the default behavior for virtualenv but let me just mention that)</p>
+</blockquote>
 <p>Once the command above is done executing, a folder with ENVNAME will be created that has the structure for installing its own set of python packages.</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">ls</span><span class="x"> ENVNAME</span>
+<div class="highlight"><pre><span class="nv">$ </span>ls ENVNAME
 </pre></div>
 
 
-<p>will show you the following</p>
+<p>will show you the following directory structure </p>
 <div class="highlight"><pre>bin include lib share
 </pre></div>
 
 
 <p>Next, you want to figure out what packages to install and what not to install.
-A lazy way is to just have pip list all the python packages you have installed</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">pip</span><span class="x"> freeze &gt; packages.txt</span>
+These packages will be installed within the ENVNAME directory structure,
+more specifically inside: </p>
+<div class="highlight"><pre><span class="cp">${</span><span class="n">APPROPRAITE_PATH</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">ENVNAME</span><span class="cp">}</span>/lib/python2.7/site-packages
 </pre></div>
 
 
-<p>This is a bad idea if you have packages installed from external source like git / other websites.</p>
 <p>Now let’s try to activate the virtual env:</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">source</span><span class="x"> APPROPRIATE_PATH/ENVNAME/bin/activate</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>APPROPRIATE_PATH/ENVNAME/bin/activate
 </pre></div>
 
 
@@ -145,17 +170,31 @@ A lazy way is to just have pip list all the python packages you have installed</
 
 
 <p>check if the pip inside this environment is a local version:</p>
-<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">which</span><span class="x"> pip</span>
+<div class="highlight"><pre>(ENVNAME)$ which pip
 </pre></div>
 
 
 <p>should show</p>
-<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">ENVNAME</span><span class="x">/bin/pip</span>
+<div class="highlight"><pre>(ENVNAME)$ ENVNAME/bin/pip
 </pre></div>
 
 
-<p>Now you can reinstall your packages within this local environment:</p>
-<div class="highlight"><pre><span class="x">(ENVNAME)</span><span class="p">$</span><span class="nv">pip</span><span class="x"> install -r packages.txt</span>
+<p>Now you can feel free to use this local version of pip to install whatever
+packages you want.</p>
+<h3>Recording package version / Reinstalling packages</h3>
+<p>Let's say you have installed a bunch of packages for a specific coding
+project and you want to record what package and the version.
+A lazy way is to just have the pip list all the python packages you have
+installed and save it somewhere</p>
+<div class="highlight"><pre>(ENVNAME)$ pip freeze &gt; packages.txt
+</pre></div>
+
+
+<p>Let's say you want to set up the same virtual environment on another
+machine.
+Now you can copy over "packages.txt", set up the machine using the steps
+above, then reinstall your packages within this local environment:</p>
+<div class="highlight"><pre>(ENVNAME)$ pip install -r packages.txt
 </pre></div>
 
 
@@ -166,8 +205,8 @@ A lazy way is to just have pip list all the python packages you have installed</
 
 
 <p>where PATH1 is</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">echo</span><span class="x"> PATH1</span>
-<span class="x">&quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&quot;</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>PATH1
+<span class="s2">&quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&quot;</span>
 </pre></div>
 
 
@@ -179,25 +218,32 @@ A lazy way is to just have pip list all the python packages you have installed</
 </pre></div>
 
 
-<p>while you can check that the system wide version of the library has a different version:</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">ipython</span>
+<p>while you can check that the system wide version of the library has a
+different version after deactivating the virtual env</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">APPROPRAITE_PATH</span><span class="o">/</span><span class="err">$</span><span class="p">{</span><span class="n">ENVNAME</span><span class="p">}</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">deactivate</span>  
+<span class="err">$</span> <span class="n">ipython</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">astropy</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">print</span> <span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s">&#39;0.4.1&#39;</span>
 </pre></div>
 
 
-<p>Last bit of this post is about being lazy and having the virtualenv automatically activate itself:</p>
-<div class="highlight"><pre><span class="p">$</span><span class="nv">sudo</span><span class="x"> pip install autoenv</span>
-<span class="p">$</span><span class="nv">echo</span><span class="x"> &quot;</span><span class="p">$</span><span class="nv">PATH_TO_AUTOENV</span><span class="x">/activate.sh&quot; &gt;&gt; ~/.bash_profile</span>
-<span class="p">$</span><span class="nv">cd</span><span class="x"> </span><span class="p">$</span><span class="nv">APPROPRIATE_PATH</span><span class="x">/ </span><span class="err">#</span><span class="x"> this is where ENVNAME lives</span>
-<span class="p">$</span><span class="nv">echo</span><span class="x"> &quot;source ENVNAME/bin/activate&quot; &gt; .env</span>
+<h3>Automating virtualenv activation</h3>
+<p>Last bit of this post is about being lazy and having the virtualenv automatically activate itself:
+when you switch to the appropriate directory using command line</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo pip install autoenv
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$PATH_TO_AUTOENV</span><span class="s2">/activate.sh&quot;</span> &gt;&gt; ~/.bash_profile
+<span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$APPROPRIATE_PATH</span>/ <span class="c"># this is the parent directory where ENVNAME lives</span>
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;source ABSOLUTE_PATH/ENVNAME/bin/activate&quot;</span> &gt; .env
 </pre></div>
 
 
 <p>now whenever you switch to the appropriate directory,
-the virtual env will be activated for you.
-$PATH_TO_AUTOENV would better off be an absolute path than a relative path since the script will work also if your are in the children directory with an absolute path.</p>
+the virtual env will be activated for you.</p>
+<h3>Troubleshooting</h3>
+<p>If you see any weird behavior for importing modules in the virtualenv or
+using pytest, make sure that you are using versions of python packages
+installed from within the virtualenv and not the system version.</p>
 <hr />
 <p>This original post is on my <a href="http://karenyng.wordpress.com/2014/10/12/using-virtualenv-for-safeguarding-research-project-dependencies/">wordpress blog</a> but I have to say I do not like
 the wordpress interface and how it usually messes up my symbols. 
@@ -272,13 +318,13 @@ paste to test how the layout works for this particular post.</p>
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/python.html">
-                            Python
+                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
+                            reproducible science
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
-                            reproducible science
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
                         </a>
                     </li>
                 </ul>

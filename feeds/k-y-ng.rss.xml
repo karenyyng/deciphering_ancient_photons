@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deciphering ancient photons</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/k-y-ng.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 24 Dec 2014 18:30:00 -0800</lastBuildDate><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html</link><description>&lt;p&gt;It’s a tragedy whenever a code breaks after an “upgrade”.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deciphering ancient photons</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/k-y-ng.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 24 Dec 2014 18:30:00 -0800</lastBuildDate><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
+&lt;p&gt;It’s a tragedy whenever a code breaks after a software “update”.
 I have recently started using virtualenv for python to prevent my
-macport/apt-get
-updates from messing up with the code of my research project.
+macport / apt-get
+updates from messing up the code of my research projects.
 And before I forget how to set it up correctly,
 I should write about it:&lt;/p&gt;
-&lt;p&gt;This goes without saying is that you should have virtualenv installed.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;virtualenv&lt;/span&gt;&lt;span class="x"&gt; --no-site-packages ENVNAME&lt;/span&gt;
+&lt;h3&gt;Prerequisites&lt;/h3&gt;
+&lt;p&gt;I will use python 2.7 for this post.
+You should also have   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;py27-virtualenv&lt;/li&gt;
+&lt;li&gt;pip &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;installed, either with pip or macport or apt-get or if you like, from
+source.
+I imagine you can replace pip with easy_install easily.&lt;/p&gt;
+&lt;h3&gt;How to create virtualenv&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv-27 --no-site-packages ENVNAME
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;creating virtualenv this way will instruct that the paths inside the virtual env not to include path the system wide python packages
-i.e. whatever python packages installed to the PATH variable in the shell configuration file (e.g. .bashrc / .bash_profile) will be ignored
-Note if you have python packages path set as part of PYTHONPATH, your virtualenv will not work properly so you will want to remove any system wide python packages from your PYTHONPATH.
+i.e. whatever python packages installed to the PATH variable in the shell configuration file (e.g. .bashrc / .bash_profile) will be ignored&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h4&gt;Caveats&lt;/h4&gt;
+&lt;p&gt;Note if you have python packages path set as part of PYTHONPATH, your virtualenv will not work properly so you will want to remove any system wide python packages from your PYTHONPATH.
 (using –no-site-packages seems to be the default behavior for virtualenv but let me just mention that)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Once the command above is done executing, a folder with ENVNAME will be created that has the structure for installing its own set of python packages.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;ls&lt;/span&gt;&lt;span class="x"&gt; ENVNAME&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ls ENVNAME
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;will show you the following&lt;/p&gt;
+&lt;p&gt;will show you the following directory structure &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;bin include lib share
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Next, you want to figure out what packages to install and what not to install.
-A lazy way is to just have pip list all the python packages you have installed&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="x"&gt; freeze &amp;gt; packages.txt&lt;/span&gt;
+These packages will be installed within the ENVNAME directory structure,
+more specifically inside: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;APPROPRAITE_PATH&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;ENVNAME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/lib/python2.7/site-packages
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;This is a bad idea if you have packages installed from external source like git / other websites.&lt;/p&gt;
 &lt;p&gt;Now let’s try to activate the virtual env:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;source&lt;/span&gt;&lt;span class="x"&gt; APPROPRIATE_PATH/ENVNAME/bin/activate&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;source &lt;/span&gt;APPROPRIATE_PATH/ENVNAME/bin/activate
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -42,17 +56,31 @@ A lazy way is to just have pip list all the python packages you have installed&l
 
 
 &lt;p&gt;check if the pip inside this environment is a local version:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;(ENVNAME)&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;which&lt;/span&gt;&lt;span class="x"&gt; pip&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(ENVNAME)$ which pip
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;should show&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;(ENVNAME)&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;ENVNAME&lt;/span&gt;&lt;span class="x"&gt;/bin/pip&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(ENVNAME)$ ENVNAME/bin/pip
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now you can reinstall your packages within this local environment:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;(ENVNAME)&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="x"&gt; install -r packages.txt&lt;/span&gt;
+&lt;p&gt;Now you can feel free to use this local version of pip to install whatever
+packages you want.&lt;/p&gt;
+&lt;h3&gt;Recording package version / Reinstalling packages&lt;/h3&gt;
+&lt;p&gt;Let's say you have installed a bunch of packages for a specific coding
+project and you want to record what package and the version.
+A lazy way is to just have the pip list all the python packages you have
+installed and save it somewhere&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(ENVNAME)$ pip freeze &amp;gt; packages.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let's say you want to set up the same virtual environment on another
+machine.
+Now you can copy over "packages.txt", set up the machine using the steps
+above, then reinstall your packages within this local environment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;(ENVNAME)$ pip install -r packages.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -63,8 +91,8 @@ A lazy way is to just have pip list all the python packages you have installed&l
 
 
 &lt;p&gt;where PATH1 is&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;echo&lt;/span&gt;&lt;span class="x"&gt; PATH1&lt;/span&gt;
-&lt;span class="x"&gt;&amp;quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo &lt;/span&gt;PATH1
+&lt;span class="s2"&gt;&amp;quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -76,25 +104,32 @@ A lazy way is to just have pip list all the python packages you have installed&l
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;while you can check that the system wide version of the library has a different version:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;ipython&lt;/span&gt;
+&lt;p&gt;while you can check that the system wide version of the library has a
+different version after deactivating the virtual env&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;APPROPRAITE_PATH&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;ENVNAME&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;deactivate&lt;/span&gt;  
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;ipython&lt;/span&gt;
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;astropy&lt;/span&gt;
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;astropy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__version__&lt;/span&gt;
 &lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;0.4.1&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Last bit of this post is about being lazy and having the virtualenv automatically activate itself:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;sudo&lt;/span&gt;&lt;span class="x"&gt; pip install autoenv&lt;/span&gt;
-&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;echo&lt;/span&gt;&lt;span class="x"&gt; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH_TO_AUTOENV&lt;/span&gt;&lt;span class="x"&gt;/activate.sh&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile&lt;/span&gt;
-&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;cd&lt;/span&gt;&lt;span class="x"&gt; &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;APPROPRIATE_PATH&lt;/span&gt;&lt;span class="x"&gt;/ &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="x"&gt; this is where ENVNAME lives&lt;/span&gt;
-&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;echo&lt;/span&gt;&lt;span class="x"&gt; &amp;quot;source ENVNAME/bin/activate&amp;quot; &amp;gt; .env&lt;/span&gt;
+&lt;h3&gt;Automating virtualenv activation&lt;/h3&gt;
+&lt;p&gt;Last bit of this post is about being lazy and having the virtualenv automatically activate itself:
+when you switch to the appropriate directory using command line&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo pip install autoenv
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PATH_TO_AUTOENV&lt;/span&gt;&lt;span class="s2"&gt;/activate.sh&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$APPROPRIATE_PATH&lt;/span&gt;/ &lt;span class="c"&gt;# this is the parent directory where ENVNAME lives&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;source ABSOLUTE_PATH/ENVNAME/bin/activate&amp;quot;&lt;/span&gt; &amp;gt; .env
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;now whenever you switch to the appropriate directory,
-the virtual env will be activated for you.
-$PATH_TO_AUTOENV would better off be an absolute path than a relative path since the script will work also if your are in the children directory with an absolute path.&lt;/p&gt;
+the virtual env will be activated for you.&lt;/p&gt;
+&lt;h3&gt;Troubleshooting&lt;/h3&gt;
+&lt;p&gt;If you see any weird behavior for importing modules in the virtualenv or
+using pytest, make sure that you are using versions of python packages
+installed from within the virtualenv and not the system version.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;This original post is on my &lt;a href="http://karenyng.wordpress.com/2014/10/12/using-virtualenv-for-safeguarding-research-project-dependencies/"&gt;wordpress blog&lt;/a&gt; but I have to say I do not like
 the wordpress interface and how it usually messes up my symbols. 
