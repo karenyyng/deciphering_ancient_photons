@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>From photons to science</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/hackweek.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2014-09-15T22:23:00-07:00</updated><entry><title>AstroData Hack Week - day 1</title><link href="http://karenyyng.github.io/astrodata-hack-week-day-1.html" rel="alternate"></link><updated>2014-09-15T22:23:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-09-15:astrodata-hack-week-day-1.html</id><summary type="html">&lt;p&gt;Fernando Perez is giving the lecture about ipython notebook this morning.&lt;/p&gt;
+&lt;p&gt;These are some notes of the interesting ideas:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;import all the dependencies when you try to export some cell content into a function
+you can use
+&lt;tt class="docutils literal"&gt;%celltofunc&lt;/tt&gt;
+but it is still work in progress&lt;/li&gt;
+&lt;li&gt;jinja template files for conversion to ipynb&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;ipython nbconvert &lt;span class="pre"&gt;--to&lt;/span&gt; python &lt;span class="pre"&gt;--template=simplypython.tpl&lt;/span&gt;&lt;/tt&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;convert ipynb as documentation in sphinx&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;Jake Vanderplas took over just now to teach efficient programming in
+numpy (!!!)&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;he talked about how to use the reduce ufunc ... that I almost never use but is useful to know&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;Back to Fernando about cool coding + collaboration stuff:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitter.im/"&gt;https://gitter.im/&lt;/a&gt; - for any public git repos you can a start a conversation with any git users&lt;/li&gt;
+&lt;li&gt;seaborn is a nice high-level library for plotting data sets, even if they are in pandas data frame format!&lt;/li&gt;
+&lt;li&gt;virtual machines with packages shipped with an ipynb that documents the data analysis of a paper, using starclusters ......&lt;/li&gt;
+&lt;li&gt;Jupyter - people are trying to make ipython notebook more inclusive since it can communicate not only with python but with Julia and R! &lt;a class="reference external" href="http://jupyter.org/"&gt;http://jupyter.org/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;Some statistics from astrophysics perspective&lt;/p&gt;
+&lt;p&gt;Dan Foreman-Mackey gave a presentation on the application of Gaussian
+processes of detecting exolents or what's known as Kriging in
+geophysics. And he recommended some online books at
+&lt;a class="reference external" href="http://www.gaussianprocess.org/gpml/"&gt;http://www.gaussianprocess.org/gpml/&lt;/a&gt;&lt;/p&gt;
+</summary></entry></feed>

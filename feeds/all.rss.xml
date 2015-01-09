@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>From photons to science</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/all-en.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2014-12-24T18:30:00-08:00</updated><entry><title>Using Virtualenv for safeguarding research project dependencies</title><link href="http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html" rel="alternate"></link><updated>2014-12-24T18:30:00-08:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</id><summary type="html">&lt;h3&gt;Why virtualenv&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From photons to science</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 24 Dec 2014 18:30:00 -0800</lastBuildDate><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
 &lt;p&gt;It’s a tragedy whenever a code breaks after a software “update”.
 I have recently started using virtualenv for python to prevent my
 macport / apt-get updates from messing up the code of my research projects.
@@ -144,16 +144,16 @@ the wordpress interface and how it usually messes up my symbols.
 I think there is a way to download the wordpress content as
 &lt;a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/"&gt;XML&lt;/a&gt; then
 convert the content directly to md format but I'm just going to copy and
-paste to test how the layout works for this particular post.&lt;/p&gt;</summary><category term="Python"></category><category term="reproducible science"></category></entry><entry><title>New year resolution + 1st post</title><link href="http://karenyyng.github.io/new-year-resolution-1st-post.html" rel="alternate"></link><updated>2014-12-24T17:00:00-08:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2014-12-24:new-year-resolution-1st-post.html</id><summary type="html">&lt;p&gt;One thing that I greatly admire my advisor, Prof. D. Wittman, for is that he is extremely
+paste to test how the layout works for this particular post.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</guid><category>Python</category><category>reproducible science</category></item><item><title>New year resolution + 1st post</title><link>http://karenyyng.github.io/new-year-resolution-1st-post.html</link><description>&lt;p&gt;One thing that I greatly admire my advisor, Prof. D. Wittman, for is that he is extremely
 well spoken and explains things very clearly.&lt;br /&gt;
 Now as a science student I think this is a very important ability that I
 still need to improve on. By setting up this blog I hope to force myself
 to explain and share with others the mini-projects / ideas that I am
-working / have worked on. &lt;/p&gt;</summary></entry><entry><title>PyTables!</title><link href="http://karenyyng.github.io/pytables.html" rel="alternate"></link><updated>2014-12-11T23:09:00-08:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-12-11:pytables.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://pytables.github.io/usersguide/tutorials.html"&gt;Using PyTables to store / organize data is just
+working / have worked on. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 17:00:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:new-year-resolution-1st-post.html</guid></item><item><title>PyTables!</title><link>http://karenyyng.github.io/pytables.html</link><description>&lt;p&gt;&lt;a class="reference external" href="http://pytables.github.io/usersguide/tutorials.html"&gt;Using PyTables to store / organize data is just
 awesome!&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Reading this lowers my blood pressure level.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://pytables.github.io/usersguide/tutorials.html#dealing-with-nested-structures-in-tables"&gt;http://pytables.github.io/usersguide/tutorials.html#dealing-with-nested-structures-in-tables&lt;/a&gt;&lt;/p&gt;
-</summary></entry><entry><title>AstroData Hack Week conclusion</title><link href="http://karenyyng.github.io/astrodata-hack-week-conclusion.html" rel="alternate"></link><updated>2014-09-24T10:14:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-09-24:astrodata-hack-week-conclusion.html</id><summary type="html">&lt;div class="line-block"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Thu, 11 Dec 2014 23:09:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-11:pytables.html</guid></item><item><title>AstroData Hack Week conclusion</title><link>http://karenyyng.github.io/astrodata-hack-week-conclusion.html</link><description>&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;It has been a wonderful week in Seattle.&lt;/div&gt;
 &lt;div class="line"&gt;The organizers have really done a great job in trying
 to get the participants together to work on stuff.&lt;/div&gt;
@@ -164,7 +164,7 @@ to get the participants together to work on stuff.&lt;/div&gt;
 &lt;div class="line"&gt;And there will be reports of attempts of more smaller &amp;quot;hacks&amp;quot; coming.&lt;/div&gt;
 &lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
 &lt;/div&gt;
-</summary></entry><entry><title>AstroData Hack Week - day 1</title><link href="http://karenyyng.github.io/astrodata-hack-week-day-1.html" rel="alternate"></link><updated>2014-09-15T22:23:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-09-15:astrodata-hack-week-day-1.html</id><summary type="html">&lt;p&gt;Fernando Perez is giving the lecture about ipython notebook this morning.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Wed, 24 Sep 2014 10:14:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-09-24:astrodata-hack-week-conclusion.html</guid></item><item><title>AstroData Hack Week - day 1</title><link>http://karenyyng.github.io/astrodata-hack-week-day-1.html</link><description>&lt;p&gt;Fernando Perez is giving the lecture about ipython notebook this morning.&lt;/p&gt;
 &lt;p&gt;These are some notes of the interesting ideas:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;import all the dependencies when you try to export some cell content into a function
@@ -197,14 +197,14 @@ numpy (!!!)&lt;/p&gt;
 processes of detecting exolents or what's known as Kriging in
 geophysics. And he recommended some online books at
 &lt;a class="reference external" href="http://www.gaussianprocess.org/gpml/"&gt;http://www.gaussianprocess.org/gpml/&lt;/a&gt;&lt;/p&gt;
-</summary></entry><entry><title>SFAA talk on El Gordo</title><link href="http://karenyyng.github.io/sfaa-talk-on-el-gordo.html" rel="alternate"></link><updated>2014-08-21T01:03:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-08-21:sfaa-talk-on-el-gordo.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://karenyng.files.wordpress.com/2014/08/screen-shot-2014-08-20-at-11-54-06-pm.png"&gt;&lt;img alt="Screen Shot 2014-08-20 at 11.54.06 PM" src="http://karenyng.files.wordpress.com/2014/08/screen-shot-2014-08-20-at-11-54-06-pm.png?w=300" /&gt;&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Mon, 15 Sep 2014 22:23:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-09-15:astrodata-hack-week-day-1.html</guid></item><item><title>SFAA talk on El Gordo</title><link>http://karenyyng.github.io/sfaa-talk-on-el-gordo.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://karenyng.files.wordpress.com/2014/08/screen-shot-2014-08-20-at-11-54-06-pm.png"&gt;&lt;img alt="Screen Shot 2014-08-20 at 11.54.06 PM" src="http://karenyng.files.wordpress.com/2014/08/screen-shot-2014-08-20-at-11-54-06-pm.png?w=300" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I just gave a public talk on El Gordo, the galaxy cluster that I've been
 working on.&lt;/p&gt;
 &lt;p&gt;This is almost exactly one year after I gave a more technical talk on
 the same cluster in my PhD candidacy exam.&lt;/p&gt;
 &lt;p&gt;And the slides are at ......&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://slideslive.com/38891780/el-gordo"&gt;http://slideslive.com/38891780/el-gordo&lt;/a&gt;&lt;/p&gt;
-</summary></entry><entry><title>Bayesian Logical Data Analysis in the Physical Sciences</title><link href="http://karenyyng.github.io/bayesian-logical-data-analysis-in-the-physical-sciences.html" rel="alternate"></link><updated>2014-06-18T21:18:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-06-18:bayesian-logical-data-analysis-in-the-physical-sciences.html</id><summary type="html">&lt;p&gt;&lt;img alt="Bayesian Logical Data Analysis in the Physical Sciences" src="http://karenyng.files.wordpress.com/2014/06/41hnrzmbxml.jpg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Thu, 21 Aug 2014 01:03:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-08-21:sfaa-talk-on-el-gordo.html</guid></item><item><title>Bayesian Logical Data Analysis in the Physical Sciences</title><link>http://karenyyng.github.io/bayesian-logical-data-analysis-in-the-physical-sciences.html</link><description>&lt;p&gt;&lt;img alt="Bayesian Logical Data Analysis in the Physical Sciences" src="http://karenyng.files.wordpress.com/2014/06/41hnrzmbxml.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;This is my new favorite book about Bayesian stat that I learned about
 from the Penn. State Astrostat summer school.&lt;/p&gt;
 &lt;p&gt;Note that it's written by an astronomer and provides Mathematica code
@@ -227,7 +227,7 @@ Is this what I want for answering the scientific question that I have
 in mind?
 I am not sure.
 I have to think harder / talk to some Bayesians.&lt;/p&gt;
-</summary></entry><entry><title>Extragalactic astronomy and cosmology 2</title><link href="http://karenyyng.github.io/extragalactic-astronomy-and-cosmology-2.html" rel="alternate"></link><updated>2014-06-15T23:10:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-06-15:extragalactic-astronomy-and-cosmology-2.html</id><summary type="html">&lt;p&gt;&lt;img alt="Extragalactic astronomy and cosmology 2" src="http://karenyng.files.wordpress.com/2014/06/telescope_names.png" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Wed, 18 Jun 2014 21:18:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-06-18:bayesian-logical-data-analysis-in-the-physical-sciences.html</guid></item><item><title>Extragalactic astronomy and cosmology 2</title><link>http://karenyyng.github.io/extragalactic-astronomy-and-cosmology-2.html</link><description>&lt;p&gt;&lt;img alt="Extragalactic astronomy and cosmology 2" src="http://karenyng.files.wordpress.com/2014/06/telescope_names.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Fig Credit: (one of my favorite comics - XKCD)&lt;/p&gt;
 &lt;p&gt;Today i'm reading the intro part of the book that talks about different
 types of telescopes. I might have read it before but i guess i should be
@@ -256,7 +256,7 @@ the world doing exciting early universe cosmology &amp;nbsp;(e.g. for the epoch
 of reionization). They are going to have massive data sets according to
 people I met at Penn. State. Hopefully they will also figure out what to
 do with the massive data and get good science out of them :)&lt;/p&gt;
-</summary><category term="telescopes"></category><category term="astronomy"></category></entry><entry><title>Feynman lecture on Physics</title><link href="http://karenyyng.github.io/feynman-lecture-on-physics.html" rel="alternate"></link><updated>2014-05-29T23:57:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-05-29:feynman-lecture-on-physics.html</id><summary type="html">&lt;p&gt;&lt;img alt="Feynman lecture on Physics" src="http://karenyng.files.wordpress.com/2014/05/61rrhhcxhxl-_sy300_.jpg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Sun, 15 Jun 2014 23:10:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-06-15:extragalactic-astronomy-and-cosmology-2.html</guid><category>telescopes</category><category>astronomy</category></item><item><title>Feynman lecture on Physics</title><link>http://karenyyng.github.io/feynman-lecture-on-physics.html</link><description>&lt;p&gt;&lt;img alt="Feynman lecture on Physics" src="http://karenyng.files.wordpress.com/2014/05/61rrhhcxhxl-_sy300_.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;I have always liked Feynman as a physicist - I felt like his lectures
 might be too good not to be read during grad school. Today I am reading
 the E&amp;amp;M part - since I am a E&amp;amp;M TA this quarter. I am starting from the
@@ -290,7 +290,7 @@ usually just algebra / computation. Students often do not see that.....&lt;/p&gt
 it's still quite light of a reading. Hopefully I will get through all
 three volumns then start reading some graduate level books such as
 Landau and Liftshitz.&lt;/p&gt;
-</summary></entry><entry><title>Practical Statistics for Astronomer</title><link href="http://karenyyng.github.io/practical-statistics-for-astronomer.html" rel="alternate"></link><updated>2014-05-28T22:04:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-05-28:practical-statistics-for-astronomer.html</id><summary type="html">&lt;p&gt;&lt;img alt="Practical Statistics for Astronomer" src="http://karenyng.files.wordpress.com/2014/05/815vfrmyp8l-_sl1500_.jpg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Thu, 29 May 2014 23:57:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-05-29:feynman-lecture-on-physics.html</guid></item><item><title>Practical Statistics for Astronomer</title><link>http://karenyyng.github.io/practical-statistics-for-astronomer.html</link><description>&lt;p&gt;&lt;img alt="Practical Statistics for Astronomer" src="http://karenyng.files.wordpress.com/2014/05/815vfrmyp8l-_sl1500_.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;To best honest I never read the book very carefully when it was used
 as the text for my 2nd year cosmology data analysis class (sorry Chris).
 It is actually quite a fun read since it started by describing the
@@ -305,12 +305,12 @@ binning of data that follows power law distribution has to be taken with
 care etc.&lt;/p&gt;
 &lt;p&gt;I would give it bonus points for including a lot of Bayesian stuff and
 giving good comparisons between the Frequentists and Bayesian views. :D&lt;/p&gt;
-</summary><category term="statistics"></category><category term="astronomy"></category></entry><entry><title>Extragalactic Astronomy and Cosmology</title><link href="http://karenyyng.github.io/extragalactic-astronomy-and-cosmology.html" rel="alternate"></link><updated>2014-05-27T23:33:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-05-27:extragalactic-astronomy-and-cosmology.html</id><summary type="html">&lt;p&gt;&lt;img alt="Extragalactic Astronomy and Cosmology" src="http://karenyng.files.wordpress.com/2014/05/51hiovcekll.jpg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Wed, 28 May 2014 22:04:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-05-28:practical-statistics-for-astronomer.html</guid><category>statistics</category><category>astronomy</category></item><item><title>Extragalactic Astronomy and Cosmology</title><link>http://karenyyng.github.io/extragalactic-astronomy-and-cosmology.html</link><description>&lt;p&gt;&lt;img alt="Extragalactic Astronomy and Cosmology" src="http://karenyng.files.wordpress.com/2014/05/51hiovcekll.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Definitely one of my favorite text on extragalactic astronomy, so fond
 of it that I actually owned a physical copy of the text. Today I am
 reading a subsection on stuff that I work on - X-ray radiation from
 clusters of galaxies :D&lt;/p&gt;
-</summary><category term="extragalactic astronomy"></category><category term="favorite book"></category><category term="cosmology"></category></entry><entry><title>Python and HDF5</title><link href="http://karenyyng.github.io/python-and-hdf5.html" rel="alternate"></link><updated>2014-05-24T17:11:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-05-24:python-and-hdf5.html</id><summary type="html">&lt;p&gt;&lt;img alt="Python and HDF5" src="http://karenyng.files.wordpress.com/2014/05/512k43xgxml.jpg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Tue, 27 May 2014 23:33:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-05-27:extragalactic-astronomy-and-cosmology.html</guid><category>extragalactic astronomy</category><category>favorite book</category><category>cosmology</category></item><item><title>Python and HDF5</title><link>http://karenyyng.github.io/python-and-hdf5.html</link><description>&lt;p&gt;&lt;img alt="Python and HDF5" src="http://karenyng.files.wordpress.com/2014/05/512k43xgxml.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;It is a saturday so I get to choose what type of books that I read at
 my &amp;quot;leisure time&amp;quot;.
 As a continuation of my quest for trying to use python (well) for my
@@ -369,7 +369,7 @@ I think it 'd be good to use hdf5 in the long run.
 Sorry about just putting the code up like that - I meant to migrate
 this blog to something like &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;
 ... oh well maybe another time.&lt;/p&gt;
-</summary><category term="hdf5"></category><category term="Python"></category></entry><entry><title>Galactic dynamics</title><link href="http://karenyyng.github.io/galactic-dynamics.html" rel="alternate"></link><updated>2014-05-22T21:51:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-05-22:galactic-dynamics.html</id><summary type="html">&lt;p&gt;&lt;img alt="Galactic dynamics" src="http://karenyng.files.wordpress.com/2014/05/ebd8224b9da0c4eb85a3c010-l.jpg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Sat, 24 May 2014 17:11:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-05-24:python-and-hdf5.html</guid><category>hdf5</category><category>Python</category></item><item><title>Galactic dynamics</title><link>http://karenyyng.github.io/galactic-dynamics.html</link><description>&lt;p&gt;&lt;img alt="Galactic dynamics" src="http://karenyng.files.wordpress.com/2014/05/ebd8224b9da0c4eb85a3c010-l.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Was reviewing some basics in astronomy. Stuff such as the
 color-magnitude diagram for showing the relationship between the color
 and the brightness of stars (weird that astronomers call it
@@ -379,7 +379,7 @@ work on)
 Great book for reviewing astrophysics overall, very clear and in
 depth. Will aim to read the potential theory part that has more to do
 with the dynamical DM simulations that I do.&lt;/p&gt;
-</summary><category term="astronomy"></category><category term="Astrophysics"></category><category term="cosmology"></category></entry><entry><title>Debugging python code with ipdb</title><link href="http://karenyyng.github.io/debugging-python-code-with-ipdb.html" rel="alternate"></link><updated>2014-02-22T13:30:00-08:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-02-22:debugging-python-code-with-ipdb.html</id><summary type="html">&lt;p&gt;Tried a couple of ways to debug python code,&amp;nbsp;including using the %pdb
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Thu, 22 May 2014 21:51:00 -0700</pubDate><guid>tag:karenyyng.github.io,2014-05-22:galactic-dynamics.html</guid><category>astronomy</category><category>Astrophysics</category><category>cosmology</category></item><item><title>Debugging python code with ipdb</title><link>http://karenyyng.github.io/debugging-python-code-with-ipdb.html</link><description>&lt;p&gt;Tried a couple of ways to debug python code,&amp;nbsp;including using the %pdb
 magic within ipython or use %debug in the postmortem mode.&amp;nbsp;Still
 couldn't figure out how to restart the code within those modes without
 pdb raising a &amp;quot;restart&amp;quot; error.&lt;/p&gt;
@@ -416,7 +416,7 @@ $ !my_python_code_or_command
 &lt;p&gt;Other useful tips can be found
 at&amp;nbsp;&lt;a class="reference external" href="http://docs.python.org/2/library/pdb.html"&gt;http://docs.python.org/2/library/pdb.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Trying to say goodbye to debugging with print statements.&lt;/p&gt;
-</summary><category term="debugging"></category><category term="Python"></category></entry><entry><title>How to switch apps/windows w/o using the mouse on a Mac</title><link href="http://karenyyng.github.io/how-to-avoid-using-the-mouse-trackpad.html" rel="alternate"></link><updated>2014-02-21T22:33:00-08:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-02-21:how-to-avoid-using-the-mouse-trackpad.html</id><summary type="html">&lt;p&gt;If you know me, then you would know that I am not a big fan of using the
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Sat, 22 Feb 2014 13:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-02-22:debugging-python-code-with-ipdb.html</guid><category>debugging</category><category>Python</category></item><item><title>How to switch apps/windows w/o using the mouse on a Mac</title><link>http://karenyyng.github.io/how-to-avoid-using-the-mouse-trackpad.html</link><description>&lt;p&gt;If you know me, then you would know that I am not a big fan of using the
 mouse.&amp;nbsp;Back in the old days when I used linux, I could customize most of
 the keyboard shortcuts so it was easy to stay with the keyboard without
 using the mouse.&amp;nbsp;Lol even though I did set up expośe with my linux box,
@@ -430,7 +430,7 @@ I first had against using a Mac.&lt;/p&gt;
 &lt;li&gt;Cmd &amp;nbsp;` (this is the grave accent sign, not tilde) helps you switch
 between different windows of the same application&lt;/li&gt;
 &lt;/ul&gt;
-</summary></entry><entry><title>PyData 2013</title><link href="http://karenyyng.github.io/pydata-2013.html" rel="alternate"></link><updated>2013-04-06T15:13:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2013-04-06:pydata-2013.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://vimeo.com/pydata/videos/page:1/sort:date"&gt;PyData 2013&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Fri, 21 Feb 2014 22:33:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-02-21:how-to-avoid-using-the-mouse-trackpad.html</guid></item><item><title>PyData 2013</title><link>http://karenyyng.github.io/pydata-2013.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://vimeo.com/pydata/videos/page:1/sort:date"&gt;PyData 2013&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It was a really rewarding experience going to PyData and I am pleasantly
 surprised that the organizers have uploaded the talks already
 :&amp;nbsp;&lt;a class="reference external" href="https://vimeo.com/pydata/videos/page:1/sort:date"&gt;https://vimeo.com/pydata/videos/page:1/sort:date&lt;/a&gt;&lt;/p&gt;
@@ -443,4 +443,4 @@ called Blaze which is optimized for big data analysis.&lt;/li&gt;
 ipython.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;p&gt;more on that later.&lt;/p&gt;
-</summary><category term="PyData"></category></entry></feed>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">karenyng</dc:creator><pubDate>Sat, 06 Apr 2013 15:13:00 -0700</pubDate><guid>tag:karenyyng.github.io,2013-04-06:pydata-2013.html</guid><category>PyData</category></item></channel></rss>

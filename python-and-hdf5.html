@@ -121,38 +121,38 @@ UIUC!) I like it especially because of :</p>
 of reference of the most commonly used commands.
 Here they go (for my later reference):</p>
 <pre class="literal-block">
-import h5py
-import numpy as np
-f = h5py.File(&quot;filepath&quot;, &quot;w&quot;) # let's just open a file to write
+&gt;&gt;&gt; import h5py
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; f = h5py.File(&quot;filepath&quot;, &quot;w&quot;) # let's just open a file to write
 # create two datasets with names &quot;array1&quot; and &quot;array2&quot;
-f[&quot;array1&quot;] = np.ones((100, 1000)) # initialize a big 2D array
-f[&quot;array2&quot;] = np.zeros((int(1e5), int(1e6)))
+&gt;&gt;&gt; f[&quot;array1&quot;] = np.ones((100, 1000)) # initialize a big 2D array
+&gt;&gt;&gt; f[&quot;array2&quot;] = np.zeros((int(1e5), int(1e6)))
 # easy writing of metadata as attributes
-f[&quot;array1&quot;].attrs[&quot;info&quot;] = &quot;big array&quot;
-f[&quot;array2&quot;].attrs[&quot;info&quot;] = &quot;bigger array&quot;
-f.close()
+&gt;&gt;&gt; f[&quot;array1&quot;].attrs[&quot;info&quot;] = &quot;big array&quot;
+&gt;&gt;&gt; f[&quot;array2&quot;].attrs[&quot;info&quot;] = &quot;bigger array&quot;
+&gt;&gt;&gt; f.close()
 </pre>
 <p>Now this part about reading and examining the data is a bit lacking from
 the book, just tell me that ONE command that I need!:</p>
 <pre class="literal-block">
-f = h5py.File(&quot;filepath&quot;, &quot;r&quot;) # read only
+&gt;&gt;&gt; f = h5py.File(&quot;filepath&quot;, &quot;r&quot;) # read only
 # this should give you the keys e.g. [&quot;array1&quot;, &quot;array2&quot;]
 # so you don't have to remember what &quot;datasets&quot; are actually in the file
 # this is the one command to rule them all
-f.keys()
-f[&quot;array1&quot;].attrs.keys() # gives you the keys to call the attributes
+&gt;&gt;&gt; f.keys()
+&gt;&gt;&gt; f[&quot;array1&quot;].attrs.keys() # gives you the keys to call the attributes
 </pre>
 <p>Oh and I am not sure if I didn't read the book carefully enough or if
 they really have a weird syntax for retrieving the actual data:</p>
 <pre class="literal-block">
 # read the data back into python as a numpy array
-arr = f[&quot;array1&quot;][...]
+&gt;&gt;&gt; arr = f[&quot;array1&quot;][...]
 </pre>
 <p>Or if you have a linux / mac, you just want to check the file structure
 quickly,</p>
 <p>at the command line you can do:</p>
 <pre class="literal-block">
-h5ls -vlr file.h5
+$ h5ls -vlr file.h5
 </pre>
 <p>It would spit out the descriptions of the dataset and the keys for
 calling the dataset.</p>
@@ -260,28 +260,13 @@ this blog to something like <a class="reference external" href="http://blog.getp
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/pydata.html">
-                            PyData
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
-                            favorite book
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/astrophysics.html">
-                            Astrophysics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/debugging.html">
-                            debugging
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://karenyyng.github.io/tag/telescopes.html">
                             telescopes
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/extragalactic-astronomy.html">
+                            extragalactic astronomy
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -290,8 +275,23 @@ this blog to something like <a class="reference external" href="http://blog.getp
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/debugging.html">
+                            debugging
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="http://karenyyng.github.io/tag/reproducible-science.html">
                             reproducible science
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/astrophysics.html">
+                            Astrophysics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/pydata.html">
+                            PyData
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -300,8 +300,8 @@ this blog to something like <a class="reference external" href="http://blog.getp
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/extragalactic-astronomy.html">
-                            extragalactic astronomy
+                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
+                            favorite book
                         </a>
                     </li>
                 </ul>
