@@ -8,7 +8,7 @@ enhance reproducibility.
 Before I forget how to set it up correctly,
 I should write about it.&lt;/p&gt;
 &lt;h3&gt;Prerequisites&lt;/h3&gt;
-&lt;p&gt;I will use python 2.7 for this post.
+&lt;p&gt;I will use python 2.7 and assume the use of macport for this post.
 You should also have   &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;py27-virtualenv&lt;/li&gt;
@@ -19,11 +19,14 @@ source. I think you also can replace pip with easy_install if you prefer
 easy_install instead.
 I also assume you know some basic shell commands.&lt;/p&gt;
 &lt;h3&gt;How to create virtualenv&lt;/h3&gt;
-&lt;p&gt;At a terminal, call the executable of virtualenv:&lt;/p&gt;
+&lt;p&gt;If you just want to use virtualenv for the same version python as the
+system wide version, at a terminal, call the executable of virtualenv:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv-27 --no-site-packages ENVNAME
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;The command could also be &lt;code&gt;virtualenv&lt;/code&gt; for some people. 
+I assumed that &lt;code&gt;virtualenv&lt;/code&gt; was installed using &lt;code&gt;macport&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;creating virtualenv this way will instruct that the paths inside the virtual env not to include path the system wide python packages
 (using &lt;code&gt;–no-site-packages&lt;/code&gt; seems to be the default behavior for virtualenv but let me just mention that)
 After this command, whatever python packages installed to the &lt;code&gt;PATH&lt;/code&gt; variable
@@ -125,7 +128,7 @@ different version after deactivating the virtual env&lt;/p&gt;
 &lt;p&gt;Last bit of this post is about being lazy and having the virtualenv automatically activate itself
 when you switch to the appropriate directory using command line.&lt;/p&gt;
 &lt;p&gt;You will need the python package &lt;code&gt;autoenv&lt;/code&gt; which can be installed by:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo pip install autoenv
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install autoenv
 &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;source &lt;/span&gt;&lt;span class="nv"&gt;$PATH_TO_AUTOENV&lt;/span&gt;&lt;span class="s2"&gt;/activate.sh&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile
 &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$APPROPRIATE_PATH&lt;/span&gt;/ &lt;span class="c"&gt;# this is the parent directory where ENVNAME lives&lt;/span&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;source ABSOLUTE_PATH/ENVNAME/bin/activate&amp;quot;&lt;/span&gt; &amp;gt; .env
@@ -139,9 +142,18 @@ the virtual env will be activated for you.&lt;/p&gt;
 when using pytest, make sure that you are using versions of python packages
 installed from within the virtualenv and not the system version.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;This original post is on my &lt;a href="http://karenyng.wordpress.com/2014/10/12/using-virtualenv-for-safeguarding-research-project-dependencies/"&gt;wordpress blog&lt;/a&gt; but I have to say I do not like
-the wordpress interface and how it usually messes up my symbols. 
-I think there is a way to download the wordpress content as
-&lt;a href="http://en.blog.wordpress.com/2006/06/12/xml-import-export/"&gt;XML&lt;/a&gt; then
-convert the content directly to md format but I'm just going to copy and
-paste to test how the layout works for this particular post.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</guid><category>Python</category><category>reproducible science</category></item></channel></rss>
+&lt;h3&gt;creating virtualenv for a different python version&lt;/h3&gt;
+&lt;p&gt;let's say that I use python 2.7 for most of my projects and 
+would like to play with python 3.4 i can first install python version 3.4
+using macport by:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo port install python34 py34-pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;then the only difference when creating the virtualenv is to specify using
+python 3.4&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv -p &lt;span class="k"&gt;$(&lt;/span&gt;which python3.4&lt;span class="k"&gt;)&lt;/span&gt; ENVNAME --distribute
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</guid><category>Python</category><category>reproducible science</category></item></channel></rss>

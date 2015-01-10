@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Deciphering ancient photons</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/articles.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2014-12-29T17:00:00-08:00</updated><entry><title>GP</title><link href="http://karenyyng.github.io/gp.html" rel="alternate"></link><updated>2014-12-29T17:00:00-08:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2014-12-29:gp.html</id><summary type="html">&lt;p&gt;
-&lt;div class="math"&gt;$$\vec{y} \sim N(0, \Sigma)$$&lt;/div&gt;
-&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
-        "    showMathMenu: true," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="GP"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>From photons to science</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/articles.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2015-01-07T00:00:00-08:00</updated><entry><title>My favorite IPython tips and tricks</title><link href="http://karenyyng.github.io/my-favorite-ipython-tips-and-tricks.html" rel="alternate"></link><updated>2015-01-07T00:00:00-08:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2015-01-07:my-favorite-ipython-tips-and-tricks.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;hist&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;l1&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will show you the first &lt;code&gt;l1&lt;/code&gt; to &lt;code&gt;l2&lt;/code&gt; lines of the history of the
+(n-1)-to-last ipython session.  &lt;/p&gt;</summary><category term="IPython"></category></entry></feed>
