@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From photons to science</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 24 Dec 2014 18:30:00 -0800</lastBuildDate><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From photons to science</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 24 Dec 2014 18:30:00 -0800</lastBuildDate><item><title>How I built this blog with Pelican</title><link>http://karenyyng.github.io/how-i-built-this-blog-with-pelican.html</link><description></description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:how-i-built-this-blog-with-pelican.html</guid><category>Python</category><category>Pelican</category><category>Django</category></item><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>http://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
 &lt;p&gt;It’s a tragedy whenever a code breaks after a software “update”.
 I have recently started using virtualenv for python to prevent my
 macport / apt-get updates from messing up the code of my research projects.
@@ -156,6 +156,9 @@ python 3.4&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Other virtualenv tutorials&lt;/h3&gt;
+&lt;p&gt;There is a wonderful tutorial from
+&lt;a href="http://docs.astropy.org/en/stable/development/workflow/virtual_pythons.html#virtual-envs"&gt;astropy.&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</guid><category>Python</category><category>reproducible science</category></item><item><title>New year resolution + 1st post</title><link>http://karenyyng.github.io/new-year-resolution-1st-post.html</link><description>&lt;p&gt;One thing that I greatly admire my advisor, Prof. D. Wittman, for is that he is extremely
 well spoken and explains things very clearly.&lt;br /&gt;
 Now as a science student I think this is a very important ability that I
