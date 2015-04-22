@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From photons to science</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 07 Jan 2015 00:00:00 -0800</lastBuildDate><item><title>My favorite IPython tips and tricks</title><link>http://karenyyng.github.io/my-favorite-ipython-tips-and-tricks.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;In&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;hist&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;l1&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;will show you the first &lt;code&gt;l1&lt;/code&gt; to &lt;code&gt;l2&lt;/code&gt; lines of the history of the
-(n-1)-to-last ipython session.  &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 07 Jan 2015 00:00:00 -0800</pubDate><guid>tag:karenyyng.github.io,2015-01-07:my-favorite-ipython-tips-and-tricks.html</guid><category>IPython</category></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From photons to science</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 22 Apr 2015 00:44:01 -0700</lastBuildDate><item><title>2015 mid-year status and goals</title><link>http://karenyyng.github.io/2015-mid-year-status-and-goals.html</link><description>&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;slight stylistic &lt;code&gt;CSS&lt;/code&gt; change (finally know which &lt;code&gt;CSS&lt;/code&gt; to fix)&lt;/li&gt;
+&lt;li&gt;fixing &lt;code&gt;jQuery&lt;/code&gt; plugin for returning search results properly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When there are enough material I will blog about how to customize different
+things with this blog statically generated with &lt;code&gt;Pelican&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Learning schedule&lt;/h2&gt;
+&lt;p&gt;Out of all the things
+that I wish to learn in grad. school (besides Physics and Cosmology
+obviously), Bayesian stat. and PGMs are some things that I have wanted to
+learn about for a long time.
+I believe a better understanding
+of probabilistic models / stat. concepts will aid my data analysis tremendously. 
+Therefore, I have stopped giving myself excuses and started working on the Coursera material on &lt;a href="https://class.coursera.org/pgm-003"&gt;Probabilistic Graphical
+Model (PGM)&lt;/a&gt;. i&lt;/p&gt;
+&lt;p&gt;Related reading that I assigned myself include: &lt;br /&gt;
+&lt;img alt="Probabilistic Graphical Model Principles and
+Techniques" src="http://ecx.images-amazon.com/images/I/412Q24g5bGL.jpg" /&gt; &lt;br /&gt;
+which is the course textbook.    &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Bayesian Reasoning and Machine
+Learning (aka my new favorite
+book)" src="http://ecx.images-amazon.com/images/I/51mDqNeDjxL.jpg" /&gt; &lt;br /&gt;
+which is one of my favorite textbooks with really concrete examples and
+accompanying code &lt;code&gt;BRMLToolKit&lt;/code&gt; which is written in &lt;code&gt;Matlab&lt;/code&gt;. 
+As programming exercises, I have been trying to rewrite some of the code in Python
+&lt;a href="https://github.com/karenyyng/PyBRMLToolKit"&gt;here&lt;/a&gt;.   &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Building Probabilistic Graphical Models with
+Python" src="http://ecx.images-amazon.com/images/I/611O8b3PxDL.jpg" /&gt; &lt;br /&gt;
+I am curious to see how good the &lt;code&gt;Python&lt;/code&gt; package &lt;code&gt;libpgm&lt;/code&gt; is which is used in this
+book. Now I don't know
+how good the statistics / probability part of the book is but I am willing to
+give the python package a try without reinventing
+everything from scratch if it is good.   &lt;/p&gt;
+&lt;p&gt;Finally, since most of the books above contain mostly machine learning /
+probability concepts, I am adding one last book to the list to gain more
+perspective from the statistics side of things. It is written by one of
+my favorite (Bayesian) statisticians Andrew Gelman. &lt;br /&gt;
+&lt;img alt="Data Analysis using Regression and Multilevel / Hierarchical
+Models" src="http://ecx.images-amazon.com/images/I/519gJUTbWwL.jpg" /&gt;   &lt;/p&gt;
+&lt;p&gt;There are other things that I wish to do later in grad. school such as
+actually practise doing data analysis with &lt;a href="http://www.kaggle.com/competitions"&gt;Kaggle
+competitions&lt;/a&gt; but I should focus!
+I am giving myself half a year's time from now just to learn as much about PGM /
+Bayesian stat. related stuff as possible before diving into Kaggle.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 22 Apr 2015 00:44:01 -0700</pubDate><guid>tag:karenyyng.github.io,2015-04-22:2015-mid-year-status-and-goals.html</guid><category>Personal goals</category><category>favorite book</category></item></channel></rss>
