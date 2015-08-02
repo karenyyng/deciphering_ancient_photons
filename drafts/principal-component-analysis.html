@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Principal Component Analysis - From photons to science</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://karenyyng.github.io/drafts/principal-component-analysis.html">
+
+        <meta name="author" content="K. Y. Ng" />
+        <meta name="description" content="This is the beginning of a series of me trying to explain Stat / Machine-learning techniques / concepts in a succinct fashion. Aspect Description What it is Dimensionality reduction technique Layman explanation data compression by picking out the most dominant features Type Unsupervised Steps 1. Perform eigenvalue decomposition of the mean-subtracted covariance ..." />
+
+        <meta property="og:site_name" content="From photons to science" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Principal Component Analysis"/>
+        <meta property="og:url" content="http://karenyyng.github.io/drafts/principal-component-analysis.html"/>
+        <meta property="og:description" content="This is the beginning of a series of me trying to explain Stat / Machine-learning techniques / concepts in a succinct fashion. Aspect Description What it is Dimensionality reduction technique Layman explanation data compression by picking out the most dominant features Type Unsupervised Steps 1. Perform eigenvalue decomposition of the mean-subtracted covariance ..."/>
+        <meta property="article:published_time" content="2015-07-27" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="K. Y. Ng" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://karenyyng.github.io/theme/css/bootstrap.simplex.min.css" type="text/css"/>
+    <link href="http://karenyyng.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://karenyyng.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://karenyyng.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://karenyyng.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://karenyyng.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="From photons to science ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://karenyyng.github.io/" class="navbar-brand">
+From photons to science            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/projects.html">Projects</a></li>
+                    <li><a href="/pages/talks.html">Talks</a></li>
+                    <li><a href="/pages/trips.html">Trips</a></li>
+                    <li><a href="https://www.dropbox.com/s/8b167efzz3786br/Karen_resume.pdf?dl=0">Resume</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="http://karenyyng.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://karenyyng.github.io/drafts/principal-component-analysis.html"
+                       rel="bookmark"
+                       title="Permalink to Principal Component Analysis">
+                        Principal Component Analysis
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-27T00:06:07-07:00"> Mon 27 July 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This is the beginning of a series of me trying to explain Stat /
+Machine-learning techniques / concepts in a succinct fashion. </p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it is</td>
+<td>Dimensionality reduction technique</td>
+</tr>
+<tr>
+<td>Layman explanation</td>
+<td>data compression by picking out the most dominant features</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Unsupervised</td>
+</tr>
+<tr>
+<td>Steps</td>
+<td>1. Perform eigenvalue decomposition of the mean-subtracted covariance matrix (d x d)</td>
+</tr>
+<tr>
+<td></td>
+<td>2. Sort eigenvectors (d of them) according to the descending order of the corresponding eigenvalues</td>
+</tr>
+<tr>
+<td></td>
+<td>3. Variance explained by each component is captured by the relative eigenvalue of that component , i.e. $ abs(\lambda_i) / \sum_i abs(\lambda_i) $</td>
+</tr>
+<tr>
+<td></td>
+<td>4. Pick enough components to explain most of the variance and discard the rest of the components, hence reducing the dimension of the data</td>
+</tr>
+<tr>
+<td>Pros</td>
+<td>* pick up independent linear components</td>
+</tr>
+<tr>
+<td></td>
+<td>* should be numerically stable for most data unless there is serious collinearity</td>
+</tr>
+<tr>
+<td>between features such that the covariance matrix is ill-conditioned</td>
+<td></td>
+</tr>
+<tr>
+<td>Cons</td>
+<td>* only works for picking out linear components but not nonlinear components</td>
+</tr>
+<tr>
+<td></td>
+<td>* computationally intensive and scales as <span class="math">\(O(d^3)\)</span></td>
+</tr>
+<tr>
+<td></td>
+<td>* have to recompute all data if there is new data</td>
+</tr>
+<tr>
+<td></td>
+<td>* sensitive to scaling of different dimensions</td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'Tex'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'decipheringancientphotons'; // required: replace example with your forum shortname
+
+                var disqus_url = 'http://karenyyng.github.io/drafts/principal-component-analysis.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="/images/me_rounded_corners.png"/>
+        </p>
+    <p>
+        <strong>About Karen Yin-Yee Ng</strong><br/>
+        I am a Physics PhD student who analyzes astronomical data with statistical, machine learning techniques and big data tools.
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="http://www.linkedin.com/in/karenyng"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                <li class="list-group-item"><a href="http://www.github.com/karenyyng"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+                <li class="list-group-item"><a href="http://www.twitter.com/karenyng"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="http://karenyyng.github.io/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> RSS</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
+                            favorite book
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/cosmology.html">
+                            cosmology
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/debugging.html">
+                            debugging
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/telescopes.html">
+                            telescopes
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/personal-goals.html">
+                            Personal goals
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
+                            reproducible science
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/extragalactic-astronomy.html">
+                            extragalactic astronomy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/astrophysics.html">
+                            Astrophysics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/pydata.html">
+                            PyData
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/hdf5.html">
+                            hdf5
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/statistics.html">
+                            statistics
+                        </a>
+                    </li>
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://www.mergingclustercollaboration.org/" target="_blank">
+                MC^2 - Merging Cluster Collboration
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Karen Yin-Yee Ng
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://karenyyng.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://karenyyng.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://karenyyng.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'decipheringancientphotons'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
