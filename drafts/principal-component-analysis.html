@@ -12,17 +12,17 @@
 
 <link rel="canonical" href="http://karenyyng.github.io/drafts/principal-component-analysis.html">
 
-        <meta name="author" content="K. Y. Ng" />
-        <meta name="description" content="This is the beginning of a series of me trying to explain Stat / Machine-learning techniques / concepts in a succinct fashion. Aspect Description What it is Dimensionality reduction technique Layman explanation data compression by picking out the most dominant features Type Unsupervised Steps 1. Perform eigenvalue decomposition of the mean-subtracted covariance ..." />
+        <meta name="author" content="Karen Y. Ng" />
+        <meta name="description" content="This is the beginning of a series of me trying to explain Stat. / Machine-learning techniques / concepts in a succinct fashion. What it is It is a dimensionality reduction technique. It achieves data compression by picking out the most dominant features. Type of ML technique Unsupervised Steps Perform eigenvalue decomposition of ..." />
 
         <meta property="og:site_name" content="From photons to science" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Principal Component Analysis"/>
         <meta property="og:url" content="http://karenyyng.github.io/drafts/principal-component-analysis.html"/>
-        <meta property="og:description" content="This is the beginning of a series of me trying to explain Stat / Machine-learning techniques / concepts in a succinct fashion. Aspect Description What it is Dimensionality reduction technique Layman explanation data compression by picking out the most dominant features Type Unsupervised Steps 1. Perform eigenvalue decomposition of the mean-subtracted covariance ..."/>
+        <meta property="og:description" content="This is the beginning of a series of me trying to explain Stat. / Machine-learning techniques / concepts in a succinct fashion. What it is It is a dimensionality reduction technique. It achieves data compression by picking out the most dominant features. Type of ML technique Unsupervised Steps Perform eigenvalue decomposition of ..."/>
         <meta property="article:published_time" content="2015-07-27" />
-            <meta property="article:section" content="misc" />
-            <meta property="article:author" content="K. Y. Ng" />
+            <meta property="article:section" content="articles" />
+            <meta property="article:author" content="Karen Y. Ng" />
 
 
     <!-- Bootstrap -->
@@ -102,74 +102,57 @@ From photons to science            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>This is the beginning of a series of me trying to explain Stat /
+                <p>This is the beginning of a series of me trying to explain Stat. /
 Machine-learning techniques / concepts in a succinct fashion. </p>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>What it is</td>
-<td>Dimensionality reduction technique</td>
-</tr>
-<tr>
-<td>Layman explanation</td>
-<td>data compression by picking out the most dominant features</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>Unsupervised</td>
-</tr>
-<tr>
-<td>Steps</td>
-<td>1. Perform eigenvalue decomposition of the mean-subtracted covariance matrix (d x d)</td>
-</tr>
-<tr>
-<td></td>
-<td>2. Sort eigenvectors (d of them) according to the descending order of the corresponding eigenvalues</td>
-</tr>
-<tr>
-<td></td>
-<td>3. Variance explained by each component is captured by the relative eigenvalue of that component , i.e. $ abs(\lambda_i) / \sum_i abs(\lambda_i) $</td>
-</tr>
-<tr>
-<td></td>
-<td>4. Pick enough components to explain most of the variance and discard the rest of the components, hence reducing the dimension of the data</td>
-</tr>
-<tr>
-<td>Pros</td>
-<td>* pick up independent linear components</td>
-</tr>
-<tr>
-<td></td>
-<td>* should be numerically stable for most data unless there is serious collinearity</td>
-</tr>
-<tr>
-<td>between features such that the covariance matrix is ill-conditioned</td>
-<td></td>
-</tr>
-<tr>
-<td>Cons</td>
-<td>* only works for picking out linear components but not nonlinear components</td>
-</tr>
-<tr>
-<td></td>
-<td>* computationally intensive and scales as <span class="math">\(O(d^3)\)</span></td>
-</tr>
-<tr>
-<td></td>
-<td>* have to recompute all data if there is new data</td>
-</tr>
-<tr>
-<td></td>
-<td>* sensitive to scaling of different dimensions</td>
-</tr>
-</tbody>
-</table>
+<h3>What it is</h3>
+<p>It is a dimensionality reduction technique. It achieves data compression by
+picking out the most dominant features. </p>
+<h3>Type of ML technique</h3>
+<ul>
+<li>Unsupervised                        </li>
+</ul>
+<h3>Steps</h3>
+<ol>
+<li>Perform eigenvalue decomposition of the mean-subtracted covariance matrix
+(<span class="math">\(d\times d\)</span> where <span class="math">\(d\)</span> is the number of dimensions)  </li>
+<li>Sort eigenvectors (<span class="math">\(d\)</span> of them) according to the descending order of the
+corresponding eigenvalues <span class="math">\(abs(\lambda_i)\)</span>  i   </li>
+<li>Variance explained by each component is captured by the relative eigenvalue, 
+i.e. <div class="math">$$abs(\lambda_i)  / \sum_i abs(\lambda_i)$$</div>
+</li>
+<li>Pick enough components to explain most of the variance and 
+discard the rest of the components, hence reducing the dimension of the data  </li>
+</ol>
+<h3>What it can achieve</h3>
+<ul>
+<li>pick up orthogonal (independent) linear components    </li>
+<li>should be numerically stable for most data unless there is serious <br />
+ collinearity  between features such that the covariance matrix is ill-conditioned    </li>
+</ul>
+<h3>Limitations</h3>
+<ul>
+<li>only works for picking out linear components but not nonlinear components</li>
+<li>computationally intensive and scales as <span class="math">\(O(d^3)\)</span>     </li>
+<li>have to recompute all data if there is new data    </li>
+<li>sensitive to the scaling of different dimensions       </li>
+</ul>
+<h3>Python snippet</h3>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">PCA</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameter</span>
+<span class="sd">    ========</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    ======</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">covar_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+
+    <span class="k">return</span> 
+</pre></div>
+
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -259,13 +242,13 @@ Machine-learning techniques / concepts in a succinct fashion. </p>
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/python.html">
-                            Python
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/astronomy.html">
-                            astronomy
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -279,23 +262,18 @@ Machine-learning techniques / concepts in a succinct fashion. </p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/debugging.html">
-                            debugging
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://karenyyng.github.io/tag/telescopes.html">
                             telescopes
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/personal-goals.html">
-                            Personal goals
+                        <a href="http://karenyyng.github.io/tag/debugging.html">
+                            debugging
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
-                            reproducible science
+                        <a href="http://karenyyng.github.io/tag/statistics.html">
+                            statistics
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -304,13 +282,8 @@ Machine-learning techniques / concepts in a succinct fashion. </p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/astrophysics.html">
-                            Astrophysics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/pydata.html">
-                            PyData
+                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
+                            reproducible science
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -319,8 +292,18 @@ Machine-learning techniques / concepts in a succinct fashion. </p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/statistics.html">
-                            statistics
+                        <a href="http://karenyyng.github.io/tag/pydata.html">
+                            PyData
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/personal-goals.html">
+                            Personal goals
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/astrophysics.html">
+                            Astrophysics
                         </a>
                     </li>
                 </ul>
