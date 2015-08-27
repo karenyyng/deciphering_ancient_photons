@@ -13,13 +13,13 @@
 <link rel="canonical" href="http://karenyyng.github.io/drafts/principal-component-analysis-pca.html">
 
         <meta name="author" content="Karen Y. Ng" />
-        <meta name="description" content="This is the beginning of a series of me trying to explain Stat. / Machine-learning techniques / concepts in a succinct fashion. Please let me know if there is any room for improvement. What it is It is a dimensionality reduction technique. It achieves data compression by picking out the most dominant ..." />
+        <meta name="description" content="This is the beginning of a series of me trying to explain Stat. / Machine-learning techniques / concepts in a succinct fashion. What it is It is a dimensionality reduction technique. It achieves data compression by picking out the most dominant components. Property of this ML technique Unsupervised Generative - you can draw ..." />
 
         <meta property="og:site_name" content="From photons to science" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Principal Component Analysis (PCA)"/>
         <meta property="og:url" content="http://karenyyng.github.io/drafts/principal-component-analysis-pca.html"/>
-        <meta property="og:description" content="This is the beginning of a series of me trying to explain Stat. / Machine-learning techniques / concepts in a succinct fashion. Please let me know if there is any room for improvement. What it is It is a dimensionality reduction technique. It achieves data compression by picking out the most dominant ..."/>
+        <meta property="og:description" content="This is the beginning of a series of me trying to explain Stat. / Machine-learning techniques / concepts in a succinct fashion. What it is It is a dimensionality reduction technique. It achieves data compression by picking out the most dominant components. Property of this ML technique Unsupervised Generative - you can draw ..."/>
         <meta property="article:published_time" content="2015-08-01" />
             <meta property="article:section" content="articles" />
             <meta property="article:author" content="Karen Y. Ng" />
@@ -104,40 +104,50 @@ From photons to science            </a>
                 </div>
                 <p>This is the beginning of a series of me trying to explain Stat. /
 Machine-learning techniques / concepts in a succinct fashion. </p>
-<p>Please let me know if there is any room for improvement.</p>
 <h3>What it is</h3>
 <p>It is a dimensionality reduction technique. It achieves data compression by
 picking out the most dominant components. </p>
-<h3>Type of ML technique</h3>
+<h3>Property of this ML technique</h3>
 <ul>
 <li>Unsupervised                        </li>
+<li>Generative - you can draw new samples from the covariance matrix with reduced
+    dimensions </li>
+<li>Linear </li>
 </ul>
 <h3>Steps</h3>
 <ol>
-<li>Perform eigenvalue decomposition of the mean-subtracted covariance matrix
-(<span class="math">\(d\times d\)</span> where <span class="math">\(d\)</span> is the number of dimensions)  </li>
-<li>Sort eigenvectors (<span class="math">\(d\)</span> of them) according to the descending order of the
-corresponding eigenvalues <span class="math">\(abs(\lambda_i)\)</span>     </li>
+<li>Given data vector $\vec{x}$, perform <code>eigenvalue decomposition</code> of the sample covariance matrix:
+$$\Sigma = \frac{1}{n-1} E((x-\bar{x})(x -\bar{x})^T) $$ 
+Sanity check: The resulting sample covariance matrix is of size $d\times d$ where $d$ is the number of dimensions.  </li>
+<li>Sort eigenvectors ($d$ of them) according to the descending order of the
+corresponding eigenvalues $abs(\lambda_i)$ or the importance of each component.  </li>
 <li>Variance explained by each component is captured by the relative eigenvalue, 
-i.e. <div class="math">$$abs(\lambda_i)  / \sum_i abs(\lambda_i)$$</div>
-</li>
+i.e. $$abs(\lambda_i)  / \sum_i abs(\lambda_i)$$    </li>
 <li>Pick enough components to explain most of the variance and 
 discard the rest of the components, hence reducing the dimension of the data  </li>
 </ol>
-<h3>Python snippet</h3>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">PCA</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<h3>Example Python snippet</h3>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">PCA</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">sc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parameter</span>
 <span class="sd">    ========</span>
-<span class="sd">    d : numpy array, data vector</span>
+<span class="sd">    x : numpy array, data vector</span>
 <span class="sd">    k : integer, the number of components to return</span>
+<span class="sd">    sc : Spark Context object</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    ======</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>  
-    <span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-    <span class="n">covar_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c">#  compute mean for each feature (col) </span>
+
+    <span class="c"># textbook way of computing covariance matrix </span>
+    <span class="n">covar_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+
+    <span class="c"># distributable way </span>
+    <span class="n">covar_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+
+
     <span class="n">eigen_vals</span><span class="p">,</span> <span class="n">eigenvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigen</span><span class="p">(</span><span class="n">covar_matrix</span><span class="p">)</span>
 
 
@@ -147,44 +157,25 @@ discard the rest of the components, hence reducing the dimension of the data  </
 
 <h3>What it can achieve</h3>
 <ul>
-<li>pick up orthogonal (independent) linear components    </li>
-<li>should be numerically stable for most data unless there is serious <br />
- collinearity  between features such that the covariance matrix is ill-conditioned    </li>
+<li>pick out orthogonal (independent) linear components    </li>
+<li>should be numerically stable for most data unless there is serious
+    collinearity between features such that the covariance matrix is
+    ill-conditioned or rank-deficient    </li>
 </ul>
-<h3>Limitations</h3>
+<h3>Limitations / what it is not good for</h3>
 <ul>
 <li>only works for picking out linear components but not nonlinear components</li>
-<li>computationally intensive and scales as <span class="math">\(O(d^3)\)</span>     </li>
+<li>computationally intensive and scales as $O(d^3)$     </li>
 <li>have to recompute all eigen components if there is new data    </li>
+<li>there are faster methods to deal with sparse data</li>
 <li>sensitive to the scaling of different dimensions       </li>
 </ul>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
-        "    showMathMenu: true," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'Tex'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
+<h3>Libraries that have this function</h3>
+<ul>
+<li>The <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">Scikit-Learn
+    library</a>
+    which uses <code>SciPy</code></li>
+</ul>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -228,7 +219,7 @@ discard the rest of the components, hence reducing the dimension of the data  </
         </p>
     <p>
         <strong>About Karen Yin-Yee Ng</strong><br/>
-        I am a Physics PhD student who analyzes astronomical data with statistical, machine learning techniques and big data tools.
+        I am a Physics PhD student who analyzes astronomical data with statistics, machine learning and big data tools.
     </p>
 </div>
 <section class="well well-sm">
@@ -247,13 +238,13 @@ discard the rest of the components, hence reducing the dimension of the data  </
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/astronomy.html">
-                            astronomy
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/python.html">
-                            Python
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -267,16 +258,6 @@ discard the rest of the components, hence reducing the dimension of the data  </
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/hdf5.html">
-                            hdf5
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/pydata.html">
-                            PyData
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://karenyyng.github.io/tag/statistics.html">
                             statistics
                         </a>
@@ -287,8 +268,13 @@ discard the rest of the components, hence reducing the dimension of the data  </
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/debugging.html">
-                            debugging
+                        <a href="http://karenyyng.github.io/tag/pydata.html">
+                            PyData
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/personal-goals.html">
+                            Personal goals
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -302,8 +288,13 @@ discard the rest of the components, hence reducing the dimension of the data  </
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/personal-goals.html">
-                            Personal goals
+                        <a href="http://karenyyng.github.io/tag/hdf5.html">
+                            hdf5
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/debugging.html">
+                            debugging
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
