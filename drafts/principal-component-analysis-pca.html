@@ -116,13 +116,14 @@ picking out the most dominant components. </p>
 </ul>
 <h3>Steps</h3>
 <ol>
-<li>Given data vector $\vec{x}$, perform <code>eigenvalue decomposition</code> of the sample covariance matrix:
-$$\Sigma = \frac{1}{n-1} E((x-\bar{x})(x -\bar{x})^T) $$ 
-Sanity check: The resulting sample covariance matrix is of size $d\times d$ where $d$ is the number of dimensions.  </li>
-<li>Sort eigenvectors ($d$ of them) according to the descending order of the
-corresponding eigenvalues $abs(\lambda_i)$ or the importance of each component.  </li>
+<li>Given data vector <span class="math">\(\vec{x}\)</span>, perform <code>eigenvalue decomposition</code> of the sample covariance matrix:
+<div class="math">$$\Sigma = \frac{1}{n-1} E((x-\bar{x})(x -\bar{x})^T) $$</div> 
+Sanity check: The resulting sample covariance matrix is of size <span class="math">\(d\times d\)</span> where <span class="math">\(d\)</span> is the number of dimensions.  </li>
+<li>Sort eigenvectors (<span class="math">\(d\)</span> of them) according to the descending order of the
+corresponding eigenvalues <span class="math">\(abs(\lambda_i)\)</span> or the importance of each component.  </li>
 <li>Variance explained by each component is captured by the relative eigenvalue, 
-i.e. $$abs(\lambda_i)  / \sum_i abs(\lambda_i)$$    </li>
+i.e. <div class="math">$$abs(\lambda_i)  / \sum_i abs(\lambda_i)$$</div>
+</li>
 <li>Pick enough components to explain most of the variance and 
 discard the rest of the components, hence reducing the dimension of the data  </li>
 </ol>
@@ -165,7 +166,7 @@ discard the rest of the components, hence reducing the dimension of the data  </
 <h3>Limitations / what it is not good for</h3>
 <ul>
 <li>only works for picking out linear components but not nonlinear components</li>
-<li>computationally intensive and scales as $O(d^3)$     </li>
+<li>computationally intensive and scales as <span class="math">\(O(d^3)\)</span>     </li>
 <li>have to recompute all eigen components if there is new data    </li>
 <li>there are faster methods to deal with sparse data</li>
 <li>sensitive to the scaling of different dimensions       </li>
@@ -176,6 +177,62 @@ discard the rest of the components, hence reducing the dimension of the data  </
     library</a>
     which uses <code>SciPy</code></li>
 </ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+    
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript'; 
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'Tex'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -237,71 +294,6 @@ discard the rest of the components, hence reducing the dimension of the data  </
 
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/python.html">
-                            Python
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/astronomy.html">
-                            astronomy
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/cosmology.html">
-                            cosmology
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
-                            favorite book
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/statistics.html">
-                            statistics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/astrophysics.html">
-                            Astrophysics
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/pydata.html">
-                            PyData
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/personal-goals.html">
-                            Personal goals
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/telescopes.html">
-                            telescopes
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/extragalactic-astronomy.html">
-                            extragalactic astronomy
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/hdf5.html">
-                            hdf5
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/debugging.html">
-                            debugging
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
-                            reproducible science
-                        </a>
-                    </li>
                 </ul>
             </li>
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
