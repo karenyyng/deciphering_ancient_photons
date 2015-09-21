@@ -114,8 +114,16 @@ Automatic merge failed; fix conflicts and then commit the result.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Then it will bring up the different versions of the file in different &lt;code&gt;Vim splits&lt;/code&gt; panels.
-The top left split panel is the &lt;code&gt;LOCAL&lt;/code&gt;, top middle split is &lt;code&gt;BASE&lt;/code&gt; and top right split is &lt;code&gt;REMOTE&lt;/code&gt;.
+&lt;p&gt;Then it will bring up the different versions of the file in different &lt;code&gt;Vim splits&lt;/code&gt; panels.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;+--------------------------------+
+| LOCAL  |     BASE     | REMOTE |
++--------------------------------+
+|             MERGED             |
++--------------------------------+
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The top left split panel is the &lt;code&gt;LOCAL&lt;/code&gt;, top middle split is &lt;code&gt;BASE&lt;/code&gt; and top right split is &lt;code&gt;REMOTE&lt;/code&gt;.
 The bottom split refers to the &lt;code&gt;MERGED&lt;/code&gt; version.
 You can find this info in the bottom bar of each split (I have put 3 yellow rectangles to highlight that info).&lt;/p&gt;
 &lt;p&gt;As you can see form the below image, my &lt;code&gt;Vim&lt;/code&gt; has highlighted the differences in red for me.
