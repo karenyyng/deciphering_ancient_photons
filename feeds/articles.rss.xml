@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From photons to science</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 20 Sep 2015 22:43:47 -0700</lastBuildDate><item><title>Git mergetool tutorial</title><link>http://karenyyng.github.io/git-mergetool-tutorial.html</link><description>&lt;h2&gt;Table Of Content&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From photons to science</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 20 Sep 2015 22:43:47 -0700</lastBuildDate><item><title>Git mergetool tutorial</title><link>http://karenyyng.github.io/git-mergetool-tutorial.html</link><description>&lt;h3&gt;Table Of Content for post&lt;/h3&gt;
 &lt;p&gt;Skip to the relevant sections if needed.   &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#concepts-for-resolving-git-conflicts"&gt;Concepts for resolving &lt;code&gt;Git conflicts&lt;/code&gt;&lt;/a&gt;   &lt;/li&gt;
@@ -10,7 +10,7 @@
 &lt;li&gt;&lt;a href="#mergetool-simple-code-example"&gt;&lt;code&gt;mergetool&lt;/code&gt; simple code example for &lt;code&gt;vimdiff&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#other-great-references-and-tutorials"&gt;Other great references and tutorials&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Concepts for resolving &lt;code&gt;Git conflicts&lt;/code&gt;&lt;/h2&gt;
+&lt;h3&gt;Concepts for resolving &lt;code&gt;Git conflicts&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;For using &lt;code&gt;mergetool&lt;/code&gt; in &lt;code&gt;git&lt;/code&gt;,  we need to understand the following terminology to understand what is being merged:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;LOCAL&lt;/code&gt; - the file(s) from the current branch on the machine that you are using.&lt;/li&gt;
@@ -19,7 +19,7 @@
 &lt;li&gt;&lt;code&gt;MERGED&lt;/code&gt; - the tag / &lt;code&gt;HEAD&lt;/code&gt; object after the merge - this is saved as a new commit.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Common &lt;code&gt;mergetool&lt;/code&gt; from editors will display both &lt;code&gt;LOCAL&lt;/code&gt; and &lt;code&gt;REMOTE&lt;/code&gt;  so you can decide which changes to keep.&lt;/p&gt;
-&lt;h2&gt;Setting up different editors / tool for using &lt;code&gt;git mergetool&lt;/code&gt;&lt;/h2&gt;
+&lt;h3&gt;Setting up different editors / tool for using &lt;code&gt;git mergetool&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;We have to change the &lt;code&gt;git config&lt;/code&gt; to set a default mergetool.
 In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config merge.tool vimdiff      
@@ -32,18 +32,18 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 
 
 &lt;p&gt;&lt;a href="#table-of-content"&gt;back to top&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Finding out what &lt;code&gt;mergetool&lt;/code&gt; editors are supported&lt;/h3&gt;
+&lt;h4&gt;Finding out what &lt;code&gt;mergetool&lt;/code&gt; editors are supported&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git mergetool --tool-help
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;And we list a few of them:&lt;/p&gt;
-&lt;h4&gt;Command line &lt;code&gt;mergetool&lt;/code&gt; editors&lt;/h4&gt;
+&lt;h6&gt;Command line &lt;code&gt;mergetool&lt;/code&gt; editors&lt;/h6&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Emacs&lt;/code&gt; based diff tools: &lt;code&gt;emerge&lt;/code&gt;, or  &lt;a href="https://whatworks4me.wordpress.com/2011/04/13/view-git-diffs-in-emacs-using-ediff/"&gt;&lt;code&gt;Ediff&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Vim&lt;/code&gt; based diff tool: &lt;a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/"&gt;&lt;code&gt;vimdiff&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;GUI &lt;code&gt;mergetool&lt;/code&gt; editors&lt;/h4&gt;
+&lt;h6&gt;GUI &lt;code&gt;mergetool&lt;/code&gt; editors&lt;/h6&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;gvimdiff&lt;/code&gt; - almost identical to &lt;code&gt;vimdiff&lt;/code&gt; but uses the Linux GUI for &lt;code&gt;Vim&lt;/code&gt;, please refer to &lt;code&gt;vimdiff&lt;/code&gt; if you still use the keyboard commands for &lt;code&gt;GVim&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://kdiff3.sourceforge.net/"&gt;&lt;code&gt;kdiff3&lt;/code&gt;&lt;/a&gt; &lt;/li&gt;
@@ -51,17 +51,17 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://tortoisesvn.net/docs/nightly/TortoiseMerge_en/tmerge-dug.html"&gt;&lt;code&gt;tortoisemerge&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Or consult the community of your favorite editor to see how to do the equivalent operations for your editor.&lt;/p&gt;
-&lt;h3&gt;Other useful &lt;code&gt;mergetool&lt;/code&gt; settings&lt;/h3&gt;
+&lt;h4&gt;Other useful &lt;code&gt;mergetool&lt;/code&gt; settings&lt;/h4&gt;
 &lt;p&gt;Do not prompt before launching the merge resolution tool&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config mergetool.prompt &lt;span class="nb"&gt;false&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;a href="#table-of-content"&gt;back to top&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;code&gt;mergetool&lt;/code&gt; simple code example&lt;/h2&gt;
+&lt;h3&gt;&lt;code&gt;mergetool&lt;/code&gt; simple code example&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/"&gt;Ref1 for the example&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://flaviusim.com/blog/how-to-do-a-git-merge-with-vim/"&gt;Ref2&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;creating the git repo&lt;/h3&gt;
+&lt;h4&gt;creating the git repo&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir galaxyZoo
 &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;galaxyZoo
 &lt;span class="nv"&gt;$ &lt;/span&gt;git init
@@ -148,14 +148,14 @@ Remember to commit the merge.&lt;/p&gt;
 
 &lt;p&gt;Hooray now you can claim that you can collaborate with others with Git without messing up with your collaborators' commits.&lt;/p&gt;
 &lt;p&gt;&lt;a href="#table-of-content"&gt;back to top&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Other &lt;code&gt;vimdiff&lt;/code&gt; keyboard shortcuts&lt;/h3&gt;
+&lt;h4&gt;Other &lt;code&gt;vimdiff&lt;/code&gt; keyboard shortcuts&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;]c - Jump to the next change.
 [c - Jump to the previous change.
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;a href="http://amjith.blogspot.com/2008/08/quick-and-dirty-vimdiff-tutorial.html"&gt;ref&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Other great references and tutorials&lt;/h2&gt;
+&lt;h3&gt;Other great references and tutorials&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://git-scm.com/docs/git-mergetool"&gt;git mergetool page on git-scm.com&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://www.sbf5.com/~cduan/technical/git/git-3.shtml"&gt;tutorial about the concepts of branching and merging from Charles Duan&lt;/a&gt;     &lt;br /&gt;
 &lt;a href="http://vim.wikia.com/wiki/A_better_Vimdiff_Git_mergetool"&gt;more on vimdiff as a git mergetool&lt;/a&gt;&lt;/p&gt;

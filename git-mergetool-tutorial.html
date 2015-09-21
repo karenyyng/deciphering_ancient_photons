@@ -13,13 +13,13 @@
 <link rel="canonical" href="http://karenyyng.github.io/git-mergetool-tutorial.html">
 
         <meta name="author" content="Karen Y. Ng" />
-        <meta name="description" content="Table Of Content Skip to the relevant sections if needed. Concepts for resolving Git conflicts Setting up different editors / tool for using git mergetool Finding out what mergetool editors are supported mergetool simple code example for vimdiff Other great references and tutorials Concepts for resolving Git conflicts For using mergetool ..." />
+        <meta name="description" content="Table Of Content for post Skip to the relevant sections if needed. Concepts for resolving Git conflicts Setting up different editors / tool for using git mergetool Finding out what mergetool editors are supported mergetool simple code example for vimdiff Other great references and tutorials Concepts for resolving Git conflicts For ..." />
 
         <meta property="og:site_name" content="From photons to science" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Git mergetool tutorial"/>
         <meta property="og:url" content="http://karenyyng.github.io/git-mergetool-tutorial.html"/>
-        <meta property="og:description" content="Table Of Content Skip to the relevant sections if needed. Concepts for resolving Git conflicts Setting up different editors / tool for using git mergetool Finding out what mergetool editors are supported mergetool simple code example for vimdiff Other great references and tutorials Concepts for resolving Git conflicts For using mergetool ..."/>
+        <meta property="og:description" content="Table Of Content for post Skip to the relevant sections if needed. Concepts for resolving Git conflicts Setting up different editors / tool for using git mergetool Finding out what mergetool editors are supported mergetool simple code example for vimdiff Other great references and tutorials Concepts for resolving Git conflicts For ..."/>
         <meta property="article:published_time" content="2015-09-20" />
             <meta property="article:section" content="articles" />
             <meta property="article:author" content="Karen Y. Ng" />
@@ -102,7 +102,7 @@ From photons to science            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2>Table Of Content</h2>
+                <h3>Table Of Content for post</h3>
 <p>Skip to the relevant sections if needed.   </p>
 <ul>
 <li><a href="#concepts-for-resolving-git-conflicts">Concepts for resolving <code>Git conflicts</code></a>   </li>
@@ -113,7 +113,7 @@ From photons to science            </a>
 <li><a href="#mergetool-simple-code-example"><code>mergetool</code> simple code example for <code>vimdiff</code></a></li>
 <li><a href="#other-great-references-and-tutorials">Other great references and tutorials</a></li>
 </ul>
-<h2>Concepts for resolving <code>Git conflicts</code></h2>
+<h3>Concepts for resolving <code>Git conflicts</code></h3>
 <p>For using <code>mergetool</code> in <code>git</code>,  we need to understand the following terminology to understand what is being merged:</p>
 <ul>
 <li><code>LOCAL</code> - the file(s) from the current branch on the machine that you are using.</li>
@@ -122,7 +122,7 @@ From photons to science            </a>
 <li><code>MERGED</code> - the tag / <code>HEAD</code> object after the merge - this is saved as a new commit.</li>
 </ul>
 <p>Common <code>mergetool</code> from editors will display both <code>LOCAL</code> and <code>REMOTE</code>  so you can decide which changes to keep.</p>
-<h2>Setting up different editors / tool for using <code>git mergetool</code></h2>
+<h3>Setting up different editors / tool for using <code>git mergetool</code></h3>
 <p>We have to change the <code>git config</code> to set a default mergetool.
 In this example, we will use <code>vimdiff</code>:</p>
 <div class="highlight"><pre><span class="nv">$ </span>git config merge.tool vimdiff      
@@ -135,18 +135,18 @@ In this example, we will use <code>vimdiff</code>:</p>
 
 
 <p><a href="#table-of-content">back to top</a></p>
-<h3>Finding out what <code>mergetool</code> editors are supported</h3>
+<h4>Finding out what <code>mergetool</code> editors are supported</h4>
 <div class="highlight"><pre><span class="nv">$ </span>git mergetool --tool-help
 </pre></div>
 
 
 <p>And we list a few of them:</p>
-<h4>Command line <code>mergetool</code> editors</h4>
+<h6>Command line <code>mergetool</code> editors</h6>
 <ul>
 <li><code>Emacs</code> based diff tools: <code>emerge</code>, or  <a href="https://whatworks4me.wordpress.com/2011/04/13/view-git-diffs-in-emacs-using-ediff/"><code>Ediff</code></a></li>
 <li><code>Vim</code> based diff tool: <a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/"><code>vimdiff</code></a></li>
 </ul>
-<h4>GUI <code>mergetool</code> editors</h4>
+<h6>GUI <code>mergetool</code> editors</h6>
 <ul>
 <li><code>gvimdiff</code> - almost identical to <code>vimdiff</code> but uses the Linux GUI for <code>Vim</code>, please refer to <code>vimdiff</code> if you still use the keyboard commands for <code>GVim</code>.</li>
 <li><a href="http://kdiff3.sourceforge.net/"><code>kdiff3</code></a> </li>
@@ -154,17 +154,17 @@ In this example, we will use <code>vimdiff</code>:</p>
 <li><a href="http://tortoisesvn.net/docs/nightly/TortoiseMerge_en/tmerge-dug.html"><code>tortoisemerge</code></a></li>
 </ul>
 <p>Or consult the community of your favorite editor to see how to do the equivalent operations for your editor.</p>
-<h3>Other useful <code>mergetool</code> settings</h3>
+<h4>Other useful <code>mergetool</code> settings</h4>
 <p>Do not prompt before launching the merge resolution tool</p>
 <div class="highlight"><pre><span class="nv">$ </span>git config mergetool.prompt <span class="nb">false</span>
 </pre></div>
 
 
 <p><a href="#table-of-content">back to top</a></p>
-<h2><code>mergetool</code> simple code example</h2>
+<h3><code>mergetool</code> simple code example</h3>
 <p><a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/">Ref1 for the example</a> <br />
 <a href="http://flaviusim.com/blog/how-to-do-a-git-merge-with-vim/">Ref2</a></p>
-<h3>creating the git repo</h3>
+<h4>creating the git repo</h4>
 <div class="highlight"><pre><span class="nv">$ </span>mkdir galaxyZoo
 <span class="nv">$ </span><span class="nb">cd </span>galaxyZoo
 <span class="nv">$ </span>git init
@@ -251,14 +251,14 @@ Remember to commit the merge.</p>
 
 <p>Hooray now you can claim that you can collaborate with others with Git without messing up with your collaborators' commits.</p>
 <p><a href="#table-of-content">back to top</a></p>
-<h3>Other <code>vimdiff</code> keyboard shortcuts</h3>
+<h4>Other <code>vimdiff</code> keyboard shortcuts</h4>
 <div class="highlight"><pre>]c - Jump to the next change.
 [c - Jump to the previous change.
 </pre></div>
 
 
 <p><a href="http://amjith.blogspot.com/2008/08/quick-and-dirty-vimdiff-tutorial.html">ref</a></p>
-<h2>Other great references and tutorials</h2>
+<h3>Other great references and tutorials</h3>
 <p><a href="http://git-scm.com/docs/git-mergetool">git mergetool page on git-scm.com</a> <br />
 <a href="http://www.sbf5.com/~cduan/technical/git/git-3.shtml">tutorial about the concepts of branching and merging from Charles Duan</a>     <br />
 <a href="http://vim.wikia.com/wiki/A_better_Vimdiff_Git_mergetool">more on vimdiff as a git mergetool</a></p>
@@ -324,6 +324,31 @@ Remember to commit the merge.</p>
 
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/cosmology.html">
+                            cosmology
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
+                            favorite book
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://karenyyng.github.io/tag/extragalactic-astronomy.html">
+                            extragalactic astronomy
+                        </a>
+                    </li>
                 </ul>
             </li>
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
