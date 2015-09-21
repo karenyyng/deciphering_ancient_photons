@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>From photons to science</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/all.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2015-09-20T22:43:47-07:00</updated><entry><title>Git mergetool tutorial</title><link href="http://karenyyng.github.io/git-mergetool-tutorial.html" rel="alternate"></link><updated>2015-09-20T22:43:47-07:00</updated><author><name>Karen Y. Ng</name></author><id>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</id><summary type="html">&lt;h3&gt;Table Of Content for post&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>From photons to science</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/all.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2015-09-20T22:43:47-07:00</updated><entry><title>Git mergetool tutorial</title><link href="http://karenyyng.github.io/git-mergetool-tutorial.html" rel="alternate"></link><updated>2015-09-20T22:43:47-07:00</updated><author><name>Karen Y. Ng</name></author><id>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</id><summary type="html">&lt;h6 id="top"&gt;&lt;/h6&gt;
+
+&lt;h3&gt;Table Of Content for post&lt;/h3&gt;
 &lt;p&gt;Skip to the relevant sections if needed.   &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#concepts-for-resolving-git-conflicts"&gt;Concepts for resolving &lt;code&gt;Git conflicts&lt;/code&gt;&lt;/a&gt;   &lt;/li&gt;
@@ -31,7 +33,7 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="#http://karenyyng.github.io/git-mergetool-tutorial.html"&gt;back to top&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;Finding out what &lt;code&gt;mergetool&lt;/code&gt; editors are supported&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git mergetool --tool-help
 &lt;/pre&gt;&lt;/div&gt;
@@ -57,7 +59,7 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="#http://karenyyng.github.io/git-mergetool-tutorial.html"&gt;back to top&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;&lt;code&gt;mergetool&lt;/code&gt; simple code example&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/"&gt;Ref1 for the example&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://flaviusim.com/blog/how-to-do-a-git-merge-with-vim/"&gt;Ref2&lt;/a&gt;&lt;/p&gt;
@@ -147,7 +149,7 @@ Remember to commit the merge.&lt;/p&gt;
 
 
 &lt;p&gt;Hooray now you can claim that you can collaborate with others with Git without messing up with your collaborators' commits.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://karenyyng.github.io/git-mergetool-tutorial.html"&gt;back to top&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;Other &lt;code&gt;vimdiff&lt;/code&gt; keyboard shortcuts&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;]c - Jump to the next change.
 [c - Jump to the previous change.
@@ -159,7 +161,7 @@ Remember to commit the merge.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://git-scm.com/docs/git-mergetool"&gt;git mergetool page on git-scm.com&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://www.sbf5.com/~cduan/technical/git/git-3.shtml"&gt;tutorial about the concepts of branching and merging from Charles Duan&lt;/a&gt;     &lt;br /&gt;
 &lt;a href="http://vim.wikia.com/wiki/A_better_Vimdiff_Git_mergetool"&gt;more on vimdiff as a git mergetool&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#http://karenyyng.github.io/git-mergetool-tutorial.html"&gt;back to top&lt;/a&gt;&lt;/p&gt;</summary><category term="Explain X in 10 minutes"></category><category term="reproducible science"></category><category term="Git"></category></entry><entry><title>2015 mid-year status and goals</title><link href="http://karenyyng.github.io/2015-mid-year-status-and-goals.html" rel="alternate"></link><updated>2015-04-22T00:44:01-07:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2015-04-22:2015-mid-year-status-and-goals.html</id><summary type="html">&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;</summary><category term="Explain X in 10 minutes"></category><category term="reproducible science"></category><category term="Git"></category></entry><entry><title>2015 mid-year status and goals</title><link href="http://karenyyng.github.io/2015-mid-year-status-and-goals.html" rel="alternate"></link><updated>2015-04-22T00:44:01-07:00</updated><author><name>K. Y. Ng</name></author><id>tag:karenyyng.github.io,2015-04-22:2015-mid-year-status-and-goals.html</id><summary type="html">&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;slight stylistic &lt;code&gt;CSS&lt;/code&gt; change (finally know which &lt;code&gt;CSS&lt;/code&gt; to fix)&lt;/li&gt;
 &lt;li&gt;fixing &lt;code&gt;jQuery&lt;/code&gt; plugin for returning search results properly&lt;/li&gt;
