@@ -153,17 +153,15 @@ the book, just tell me that ONE command that I need!:</p>
 <pre class="literal-block">
 &gt;&gt;&gt; arr = f[&quot;array1&quot;][...]
 </pre>
-<p>However, the following alternative syntax works for reading both HDF5 and Numpy array for a
+<p>However, the following alternative syntax works for reading from both HDF5 or Numpy array from a
 dictionary, so I will stick to this alternative syntax instead:</p>
 <pre class="literal-block">
 &gt;&gt;&gt; arr = f[&quot;array1&quot;][:]
 </pre>
 <p>which extends naturally to slicing an array:</p>
-<blockquote>
-<pre class="doctest-block">
+<pre class="literal-block">
 &gt;&gt;&gt; arr = f[&quot;array1&quot;][:10]  # read first 10 entries
 </pre>
-</blockquote>
 <p>Moving on to next topic:
 If you have a linux / mac, you just want to check the file structure
 quickly,</p>
@@ -174,10 +172,7 @@ $ h5ls -vlr file.h5
 <p>It would spit out the descriptions of the dataset and the keys for
 calling the dataset.</p>
 <p>Currently not trying to do anything fancy with the hdf5 files yet but
-I think it 'd be good to use hdf5 in the long run.
-Sorry about just putting the code up like that - I meant to migrate
-this blog to something like <a class="reference external" href="http://blog.getpelican.com/">Pelican</a>
-... oh well maybe another time.</p>
+I think it 'd be good to use hdf5 in the long run.</p>
 
             </div>
             <!-- /.entry-content -->
@@ -241,23 +236,23 @@ this blog to something like <a class="reference external" href="http://blog.getp
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/python.html">
-                            Python
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="http://karenyyng.github.io/tag/astronomy.html">
                             astronomy
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/cosmology.html">
-                            cosmology
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
                         <a href="http://karenyyng.github.io/tag/reproducible-science.html">
                             reproducible science
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/cosmology.html">
+                            cosmology
                         </a>
                     </li>
                     <li class="list-group-item tag-2">

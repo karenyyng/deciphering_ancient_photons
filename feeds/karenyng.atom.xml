@@ -204,17 +204,15 @@ the book, just tell me that ONE command that I need!:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt;&amp;gt; arr = f[&amp;quot;array1&amp;quot;][...]
 &lt;/pre&gt;
-&lt;p&gt;However, the following alternative syntax works for reading both HDF5 and Numpy array for a
+&lt;p&gt;However, the following alternative syntax works for reading from both HDF5 or Numpy array from a
 dictionary, so I will stick to this alternative syntax instead:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt;&amp;gt; arr = f[&amp;quot;array1&amp;quot;][:]
 &lt;/pre&gt;
 &lt;p&gt;which extends naturally to slicing an array:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="doctest-block"&gt;
+&lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt;&amp;gt; arr = f[&amp;quot;array1&amp;quot;][:10]  # read first 10 entries
 &lt;/pre&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;Moving on to next topic:
 If you have a linux / mac, you just want to check the file structure
 quickly,&lt;/p&gt;
@@ -225,10 +223,7 @@ $ h5ls -vlr file.h5
 &lt;p&gt;It would spit out the descriptions of the dataset and the keys for
 calling the dataset.&lt;/p&gt;
 &lt;p&gt;Currently not trying to do anything fancy with the hdf5 files yet but
-I think it 'd be good to use hdf5 in the long run.
-Sorry about just putting the code up like that - I meant to migrate
-this blog to something like &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;
-... oh well maybe another time.&lt;/p&gt;
+I think it 'd be good to use hdf5 in the long run.&lt;/p&gt;
 </summary><category term="hdf5"></category><category term="Python"></category></entry><entry><title>Galactic dynamics</title><link href="http://karenyyng.github.io/galactic-dynamics.html" rel="alternate"></link><updated>2014-05-22T21:51:00-07:00</updated><author><name>karenyng</name></author><id>tag:karenyyng.github.io,2014-05-22:galactic-dynamics.html</id><summary type="html">&lt;p&gt;&lt;img alt="Galactic dynamics" src="http://karenyng.files.wordpress.com/2014/05/ebd8224b9da0c4eb85a3c010-l.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Was reviewing some basics in astronomy. Stuff such as the
 color-magnitude diagram for showing the relationship between the color
