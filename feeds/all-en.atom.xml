@@ -579,13 +579,23 @@ the book, just tell me that ONE command that I need!:&lt;/p&gt;
 &amp;gt;&amp;gt;&amp;gt; f.keys()
 &amp;gt;&amp;gt;&amp;gt; f[&amp;quot;array1&amp;quot;].attrs.keys() # gives you the keys to call the attributes
 &lt;/pre&gt;
-&lt;p&gt;Oh and I am not sure if I didn't read the book carefully enough or if
-they really have a weird syntax for retrieving the actual data:&lt;/p&gt;
+&lt;p&gt;HDF5 has a weird official syntax for reading data back into python:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-# read the data back into python as a numpy array
 &amp;gt;&amp;gt;&amp;gt; arr = f[&amp;quot;array1&amp;quot;][...]
 &lt;/pre&gt;
-&lt;p&gt;Or if you have a linux / mac, you just want to check the file structure
+&lt;p&gt;However, the following alternative syntax works for reading both HDF5 and Numpy array for a
+dictionary, so I will stick to this alternative syntax instead:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt;&amp;gt; arr = f[&amp;quot;array1&amp;quot;][:]
+&lt;/pre&gt;
+&lt;p&gt;which extends naturally to slicing an array:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="doctest-block"&gt;
+&amp;gt;&amp;gt;&amp;gt; arr = f[&amp;quot;array1&amp;quot;][:10]  # read first 10 entries
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Moving on to next topic:
+If you have a linux / mac, you just want to check the file structure
 quickly,&lt;/p&gt;
 &lt;p&gt;at the command line you can do:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
