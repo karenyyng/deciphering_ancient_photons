@@ -187,12 +187,12 @@ discard the rest of the components, hence reducing the dimension of the data  </
         indent = (screen.width < 768) ? "0em" : indent;
         linebreak = (screen.width < 768) ? 'true' : linebreak;
     }
-    
+
     var mathjaxscript = document.createElement('script');
     var location_protocol = (false) ? 'https' : document.location.protocol;
     if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript'; 
+    mathjaxscript.type = 'text/javascript';
     mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
@@ -203,6 +203,7 @@ discard the rest of the components, hence reducing the dimension of the data  </
         "    displayAlign: '"+ align +"'," +
         "    displayIndent: '"+ indent +"'," +
         "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
         "        displayMath: [ ['$$','$$'] ]," +
@@ -295,13 +296,18 @@ discard the rest of the components, hence reducing the dimension of the data  </
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="http://karenyyng.github.io/tag/astronomy.html">
                             astronomy
                         </a>
                     </li>
-                    <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/python.html">
-                            Python
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
+                            favorite book
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -312,11 +318,6 @@ discard the rest of the components, hence reducing the dimension of the data  </
                     <li class="list-group-item tag-2">
                         <a href="http://karenyyng.github.io/tag/cosmology.html">
                             cosmology
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
-                            favorite book
                         </a>
                     </li>
                 </ul>
