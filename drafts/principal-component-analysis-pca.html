@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Principal Component Analysis (PCA) - From photons to science</title>
+    <title>Principal Component Analysis (PCA) - From data to insights</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
         <meta name="author" content="Karen Y. Ng" />
         <meta name="description" content="This is the beginning of a series of me trying to explain Stat. / Machine-learning techniques / concepts in a succinct fashion. What it is It is a dimensionality reduction technique. It achieves data compression by picking out the most dominant components. Property of this ML technique Unsupervised Generative - you can draw ..." />
 
-        <meta property="og:site_name" content="From photons to science" />
+        <meta property="og:site_name" content="From data to insights" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Principal Component Analysis (PCA)"/>
         <meta property="og:url" content="http://karenyyng.github.io/drafts/principal-component-analysis-pca.html"/>
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="http://karenyyng.github.io/theme/css/style.css" type="text/css"/>
 
         <link href="http://karenyyng.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="From photons to science ATOM Feed"/>
+              title="From data to insights ATOM Feed"/>
 
 </head>
 <body>
@@ -49,7 +49,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://karenyyng.github.io/" class="navbar-brand">
-From photons to science            </a>
+From data to insights            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
@@ -140,12 +140,12 @@ discard the rest of the components, hence reducing the dimension of the data  </
 <span class="sd">    ======</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>  
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c">#  compute mean for each feature (col) </span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#  compute mean for each feature (col) </span>
 
-    <span class="c"># textbook way of computing covariance matrix </span>
+    <span class="c1"># textbook way of computing covariance matrix </span>
     <span class="n">covar_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
 
-    <span class="c"># distributable way </span>
+    <span class="c1"># distributable way </span>
     <span class="n">covar_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
 
 
@@ -296,23 +296,23 @@ discard the rest of the components, hence reducing the dimension of the data  </
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/python.html">
-                            Python
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="http://karenyyng.github.io/tag/astronomy.html">
                             astronomy
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
-                            favorite book
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/python.html">
+                            Python
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
                         <a href="http://karenyyng.github.io/tag/reproducible-science.html">
                             reproducible science
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
+                            favorite book
                         </a>
                     </li>
                     <li class="list-group-item tag-2">

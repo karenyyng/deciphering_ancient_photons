@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Research - Deciphering ancient photons</title>
+    <title>Research - From data to insights</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,26 +11,27 @@
 
 
 
-    <meta name="author" content="Karen Y. Ng" />
+    <meta name="author" content="Karen Yin-Yee Ng" />
     <meta name="keywords" content="Research" />
 
     <!-- Open Graph tags -->
-        <meta property="og:site_name" content="Deciphering ancient photons" />
+        <meta property="og:site_name" content="From data to insights" />
         <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Deciphering ancient photons"/>
+        <meta property="og:title" content="From data to insights"/>
         <meta property="og:url" content="http://karenyyng.github.io"/>
-        <meta property="og:description" content="Deciphering ancient photons"/>
+        <meta property="og:description" content="From data to insights"/>
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://karenyyng.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
+        <link rel="stylesheet" href="http://karenyyng.github.io/theme/css/bootstrap.simplex.min.css" type="text/css"/>
     <link href="http://karenyyng.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://karenyyng.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="http://karenyyng.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="http://karenyyng.github.io/theme/css/style.css" type="text/css"/>
 
         <link href="http://karenyyng.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Deciphering ancient photons ATOM Feed"/>
+              title="From data to insights ATOM Feed"/>
 
 </head>
 <body>
@@ -45,7 +46,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://karenyyng.github.io/" class="navbar-brand">
-Deciphering ancient photons            </a>
+From data to insights            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
@@ -53,8 +54,14 @@ Deciphering ancient photons            </a>
                     <li><a href="/pages/projects.html">Projects</a></li>
                     <li><a href="/pages/talks.html">Talks</a></li>
                     <li><a href="/pages/trips.html">Trips</a></li>
+                    <li><a href="https://www.dropbox.com/s/8b167efzz3786br/Karen_resume.pdf?dl=0">Resume</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
               <li><a href="http://karenyyng.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
@@ -68,15 +75,28 @@ Deciphering ancient photons            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://karenyyng.github.io/gaussian-process.html">Gaussian process</a></h2>
-                <div class="summary"><p>Recently I am learning about using Gaussian process as a way of modeling
-the cosmic shear signals.  </p>
-<p>A Gaussian process can be thought of a generalization of a multivariate
-normal for functions, i.e. </p>
-<p>\begin{equation}
-f(\vec{x}) \sim N(0, \Sigma)
-\end{equation}</p>
-                    <a class="btn btn-default btn-xs" href="http://karenyyng.github.io/gaussian-process.html">more ...</a>
+                <h2><a href="http://karenyyng.github.io/how-not-to-scale-a-gaussian-process.html">How (not) to scale a Gaussian Process</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-03-06T23:43:55-08:00"> Sun 06 March 2016</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://karenyyng.github.io/tag/research.html">Research</a>
+        /
+	<a href="http://karenyyng.github.io/tag/statistics.html">Statistics</a>
+        /
+	<a href="http://karenyyng.github.io/tag/numerical-linear-algebra.html">Numerical linear algebra</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Gaussian Process is a powerful non-parametric modeling method.
+However, the evaluation of the marginal likelihood involves computationally
+intensive, and non-trivially parallelisable matrix operations. </p>
+                    <a class="btn btn-default btn-xs" href="http://karenyyng.github.io/how-not-to-scale-a-gaussian-process.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -84,7 +104,15 @@ f(\vec{x}) \sim N(0, \Sigma)
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="/images/me_rounded_corners.png"/>
+        </p>
+    <p>
+        <strong>About Karen Yin-Yee Ng</strong><br/>
+        I am a Physics PhD student who analyzes astronomical data with statistics, machine learning and big data tools.
+    </p>
+</div>
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
@@ -92,33 +120,35 @@ f(\vec{x}) \sim N(0, \Sigma)
                 <li class="list-group-item"><a href="http://www.linkedin.com/in/karenyng"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
                 <li class="list-group-item"><a href="http://www.github.com/karenyyng"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
                 <li class="list-group-item"><a href="http://www.twitter.com/karenyng"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="http://karenyyng.github.io/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> RSS</a></li>
               </ul>
             </li>
 
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="http://karenyyng.github.io/gaussian-process.html">
-                            Gaussian process
-                        </a>
-                    </li>
-                </ul>
-            </li>
 
 
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
                         <a href="http://karenyyng.github.io/tag/python.html">
                             Python
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://karenyyng.github.io/tag/research.html">
-                            Research
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/statistics.html">
+                            Statistics
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
+                            favorite book
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
                         <a href="http://karenyyng.github.io/tag/reproducible-science.html">
                             reproducible science
                         </a>
@@ -127,11 +157,6 @@ f(\vec{x}) \sim N(0, \Sigma)
             </li>
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
       <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://karenyyng.github.io/feeds/all.atom.xml" target="_blank">
-                Subscribe to Atom-feed
-            </a>
-        </li>
         <li class="list-group-item">
             <a href="http://www.mergingclustercollaboration.org/" target="_blank">
                 MC^2 - Merging Cluster Collboration
@@ -149,7 +174,7 @@ f(\vec{x}) \sim N(0, \Sigma)
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2014 Karen Y. Ng
+         <div class="col-xs-10">&copy; 2016 Karen Yin-Yee Ng
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
