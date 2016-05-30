@@ -102,7 +102,7 @@ From data to insights            </a>
     </span>
             <span class="label label-default">Modified</span>
             <span class="modified">
-                <i class="fa fa-calendar"></i><time datetime="2016-03-25T00:00:00-07:00"> Fri 25 March 2016</time>
+                <i class="fa fa-calendar"></i><time datetime="2016-05-30T00:00:00-07:00"> Mon 30 May 2016</time>
             </span>
 
 
@@ -141,18 +141,18 @@ From data to insights            </a>
 <h3>Setting up different editors / tool for using <code>git mergetool</code></h3>
 <p>We have to change the <code>git config</code> to set a default mergetool.
 In this example, we will use <code>vimdiff</code>:</p>
-<div class="highlight"><pre>$ git config merge.tool vimdiff      
+<div class="highlight"><pre><span class="nv">$ </span>git config merge.tool vimdiff      
 </pre></div>
 
 
 <p>We can also set the editor to display the common ancestor <code>BASE</code> while we examine what changes are in <code>LOCAL</code> and <code>REMOTE</code> with the following setting:</p>
-<div class="highlight"><pre>$ git config merge.conflictstyle diff3  
+<div class="highlight"><pre><span class="nv">$ </span>git config merge.conflictstyle diff3  
 </pre></div>
 
 
 <p><a href="#">back to top</a></p>
 <h4>Finding out what <code>mergetool</code> editors are supported</h4>
-<div class="highlight"><pre>$ git mergetool --tool-help
+<div class="highlight"><pre><span class="nv">$ </span>git mergetool --tool-help
 </pre></div>
 
 
@@ -172,7 +172,7 @@ In this example, we will use <code>vimdiff</code>:</p>
 <p>Or consult the community of your favorite editor to see how to do the equivalent operations for your editor.</p>
 <h4>Other useful <code>mergetool</code> settings</h4>
 <p>Do not prompt before launching the merge resolution tool</p>
-<div class="highlight"><pre>$ git config mergetool.prompt <span class="nb">false</span>
+<div class="highlight"><pre><span class="nv">$ </span>git config mergetool.prompt <span class="nb">false</span>
 </pre></div>
 
 
@@ -181,10 +181,10 @@ In this example, we will use <code>vimdiff</code>:</p>
 <p><a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/">Ref1 for the example</a> <br />
 <a href="http://flaviusim.com/blog/how-to-do-a-git-merge-with-vim/">Ref2</a></p>
 <h4>creating the git repo</h4>
-<div class="highlight"><pre>$ mkdir galaxyZoo
-$ <span class="nb">cd</span> galaxyZoo
-$ git init
-$ vim astrophy_obj.txt
+<div class="highlight"><pre><span class="nv">$ </span>mkdir galaxyZoo
+<span class="nv">$ </span><span class="nb">cd </span>galaxyZoo
+<span class="nv">$ </span>git init
+<span class="nv">$ </span>vim astrophy_obj.txt
 </pre></div>
 
 
@@ -198,24 +198,24 @@ irregular
 
 
 <p>save then commit the file.</p>
-<div class="highlight"><pre>$ git add astrophy_obj.txt
-$ git commit -m <span class="s1">&#39;Initial commit&#39;</span>
-$ git branch astrophy_objects   <span class="c1"># create a new branch</span>
-$ git checkout astrophy_objects <span class="c1"># change to new branch</span>
-$ vim astrophy_obj.txt          <span class="c1"># make changes to file </span>
+<div class="highlight"><pre><span class="nv">$ </span>git add astrophy_obj.txt
+<span class="nv">$ </span>git commit -m <span class="s1">&#39;Initial commit&#39;</span>
+<span class="nv">$ </span>git branch astrophy_objects   <span class="c"># create a new branch</span>
+<span class="nv">$ </span>git checkout astrophy_objects <span class="c"># change to new branch</span>
+<span class="nv">$ </span>vim astrophy_obj.txt          <span class="c"># make changes to file </span>
 </pre></div>
 
 
 <p>Change <code>bar</code> to <code>barred</code> in the file.</p>
-<div class="highlight"><pre>$ git commit -am <span class="s1">&#39;changed bar to barred&#39;</span>
-$ git checkout master   <span class="c1"># change back to master branch</span>
-$ vim astrophy_obj.txt  
-<span class="c1"># add the word `galaxy` to the end of each line using Vim REGEX </span>
-<span class="c1"># type `:%s/$/ galaxy/g` in Vim then press enter and save `:wq`</span>
+<div class="highlight"><pre><span class="nv">$ </span>git commit -am <span class="s1">&#39;changed bar to barred&#39;</span>
+<span class="nv">$ </span>git checkout master   <span class="c"># change back to master branch</span>
+<span class="nv">$ </span>vim astrophy_obj.txt  
+<span class="c"># add the word `galaxy` to the end of each line using Vim REGEX </span>
+<span class="c"># type `:%s/$/ galaxy/g` in Vim then press enter and save `:wq`</span>
 
-$ git commit -am <span class="s1">&#39;added galaxy to each line&#39;</span>
-<span class="c1"># merge from the astrophy_objects branch to current branch, i.e. master</span>
-$ git merge astrophy_objects  
+<span class="nv">$ </span>git commit -am <span class="s1">&#39;added galaxy to each line&#39;</span>
+<span class="c"># merge from the astrophy_objects branch to current branch, i.e. master</span>
+<span class="nv">$ </span>git merge astrophy_objects  
 </pre></div>
 
 
@@ -227,7 +227,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 
 <p>We can bring up the <code>mergetool</code>:</p>
-<div class="highlight"><pre>$ git mergetool
+<div class="highlight"><pre><span class="nv">$ </span>git mergetool
 </pre></div>
 
 
@@ -264,12 +264,12 @@ or use <code>Vim</code> shortcuts pull from one of the <code>LOCAL</code>, <code
 
 <p>save the changes then quit with <code>:wqa</code> to close all the splits.
 Remember to commit the merge.</p>
-<div class="highlight"><pre>$ git commit -am <span class="s1">&#39;merged from several branches&#39;</span>
+<div class="highlight"><pre><span class="nv">$ </span>git commit -am <span class="s1">&#39;merged from several branches&#39;</span>
 </pre></div>
 
 
 <p>Other tips: if you were trying to do a <code>git pull</code> when you ran into <code>merge</code> conflicts, issue </p>
-<div class="highlight"><pre>$ git rebase –continue
+<div class="highlight"><pre><span class="nv">$ </span>git rebase –continue
 </pre></div>
 
 
@@ -349,23 +349,23 @@ Remember to commit the merge.</p>
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/astronomy.html">
-                            astronomy
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="http://karenyyng.github.io/tag/python.html">
                             Python
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
-                            reproducible science
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
                         <a href="http://karenyyng.github.io/tag/favorite-book.html">
                             favorite book
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
+                            reproducible science
                         </a>
                     </li>
                     <li class="list-group-item tag-2">

@@ -131,7 +131,7 @@ I also assume you know some basic shell commands.</p>
 <h3>How to create virtualenv</h3>
 <p>If you just want to use virtualenv for the same version python as the
 system wide version, at a terminal, call the executable of virtualenv:</p>
-<div class="highlight"><pre>$ virtualenv-27 --no-site-packages ENVNAME
+<div class="highlight"><pre><span class="nv">$ </span>virtualenv-27 --no-site-packages ENVNAME
 </pre></div>
 
 
@@ -149,7 +149,7 @@ virtualenv will not work properly so you will want to remove any system
 wide python packages from your <code>PYTHONPATH</code>.</p>
 </blockquote>
 <p>Once the command above is done executing, a folder with ENVNAME will be created that has the structure for installing its own set of python packages.</p>
-<div class="highlight"><pre>$ ls ENVNAME
+<div class="highlight"><pre><span class="nv">$ </span>ls ENVNAME
 </pre></div>
 
 
@@ -166,7 +166,7 @@ more specifically inside: </p>
 
 
 <p>Now let’s try to activate the virtual env:</p>
-<div class="highlight"><pre>$ <span class="nb">source</span> APPROPRIATE_PATH/ENVNAME/bin/activate
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>APPROPRIATE_PATH/ENVNAME/bin/activate
 </pre></div>
 
 
@@ -192,7 +192,7 @@ packages you want.</p>
 project and you want to save the package used and the respective version.
 We can have the pip list all the python packages you have
 installed and save it somewhere</p>
-<div class="highlight"><pre><span class="o">(</span>ENVNAME<span class="o">)</span>$ pip freeze &gt; packages.txt
+<div class="highlight"><pre><span class="o">(</span>ENVNAME<span class="o">)</span><span class="nv">$ </span>pip freeze &gt; packages.txt
 </pre></div>
 
 
@@ -200,18 +200,18 @@ installed and save it somewhere</p>
 machine.
 Now you can copy over "packages.txt", set up the machine using the steps
 above, then reinstall your packages within this local environment:</p>
-<div class="highlight"><pre><span class="o">(</span>ENVNAME<span class="o">)</span>$ pip install -r packages.txt
+<div class="highlight"><pre><span class="o">(</span>ENVNAME<span class="o">)</span><span class="nv">$ </span>pip install -r packages.txt
 </pre></div>
 
 
 <p>which may or may not work well depending on if you have external source of packages.</p>
 <p>Let’s say you are like me and have installed some python packages from non-conventional sources, one hackish way to make sure those will be installed properly in the virtualenv is to just copy the directory containing installed python packages to the local environment:</p>
-<div class="highlight"><pre><span class="o">(</span>ENVNAME<span class="o">)</span>$ sudo cp -r PATH1 APPROPRAITE_PATH/ENVNAME/python2.7/site-packages
+<div class="highlight"><pre><span class="o">(</span>ENVNAME<span class="o">)</span><span class="nv">$ </span>sudo cp -r PATH1 APPROPRAITE_PATH/ENVNAME/python2.7/site-packages
 </pre></div>
 
 
 <p>where <code>PATH1</code> is</p>
-<div class="highlight"><pre>$ <span class="nb">echo</span> PATH1
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>PATH1
 <span class="s2">&quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&quot;</span>
 </pre></div>
 
@@ -220,7 +220,7 @@ above, then reinstall your packages within this local environment:</p>
 <div class="highlight"><pre><span class="p">(</span><span class="n">ENVNAME</span><span class="p">)</span><span class="err">$</span> <span class="n">ipython</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">astropy</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">print</span> <span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;0.4&#39;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s">&#39;0.4&#39;</span>
 </pre></div>
 
 
@@ -230,7 +230,7 @@ different version after deactivating the virtual env</p>
 <span class="err">$</span> <span class="n">ipython</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">astropy</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="k">print</span> <span class="n">astropy</span><span class="o">.</span><span class="n">__version__</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;0.4.1&#39;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s">&#39;0.4.1&#39;</span>
 </pre></div>
 
 
@@ -238,10 +238,10 @@ different version after deactivating the virtual env</p>
 <p>Last bit of this post is about being lazy and having the virtualenv automatically activate itself
 when you switch to the appropriate directory using command line.</p>
 <p>You will need the python package <code>autoenv</code> which can be installed by:</p>
-<div class="highlight"><pre>$ pip install autoenv
-$ <span class="nb">echo</span> <span class="s2">&quot;source </span>$<span class="s2">PATH_TO_AUTOENV/activate.sh&quot;</span> &gt;&gt; ~/.bash_profile
-$ <span class="nb">cd</span> <span class="nv">$A</span>PPROPRIATE_PATH/ <span class="c1"># this is the parent directory where ENVNAME lives</span>
-$ <span class="nb">echo</span> <span class="s2">&quot;source ABSOLUTE_PATH/ENVNAME/bin/activate&quot;</span> &gt; .env
+<div class="highlight"><pre><span class="nv">$ </span>pip install autoenv
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;source </span><span class="nv">$PATH_TO_AUTOENV</span><span class="s2">/activate.sh&quot;</span> &gt;&gt; ~/.bash_profile
+<span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$APPROPRIATE_PATH</span>/ <span class="c"># this is the parent directory where ENVNAME lives</span>
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;source ABSOLUTE_PATH/ENVNAME/bin/activate&quot;</span> &gt; .env
 </pre></div>
 
 
@@ -256,13 +256,13 @@ installed from within the virtualenv and not the system version.</p>
 <p>let's say that I use python 2.7 for most of my projects and 
 would like to play with python 3.4 i can first install python version 3.4
 using macport by:</p>
-<div class="highlight"><pre>$ sudo port install python34 py34-pip
+<div class="highlight"><pre><span class="nv">$ </span>sudo port install python34 py34-pip
 </pre></div>
 
 
 <p>then the only difference when creating the virtualenv is to specify using
 python 3.4</p>
-<div class="highlight"><pre>$ virtualenv -p <span class="k">$(</span>which python3.4<span class="k">)</span> ENVNAME --distribute
+<div class="highlight"><pre><span class="nv">$ </span>virtualenv -p <span class="k">$(</span>which python3.4<span class="k">)</span> ENVNAME --distribute
 </pre></div>
 
 
@@ -332,23 +332,23 @@ python 3.4</p>
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/astronomy.html">
-                            astronomy
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="http://karenyyng.github.io/tag/python.html">
                             Python
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
-                            reproducible science
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
                         <a href="http://karenyyng.github.io/tag/favorite-book.html">
                             favorite book
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
+                            reproducible science
                         </a>
                     </li>
                     <li class="list-group-item tag-2">

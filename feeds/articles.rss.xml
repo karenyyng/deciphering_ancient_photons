@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 25 Mar 2016 00:00:00 -0700</lastBuildDate><item><title>Git mergetool tutorial</title><link>http://karenyyng.github.io/git-mergetool-tutorial.html</link><description>&lt;h6 id="top"&gt;&lt;/h6&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 30 May 2016 00:00:00 -0700</lastBuildDate><item><title>Git mergetool tutorial</title><link>http://karenyyng.github.io/git-mergetool-tutorial.html</link><description>&lt;h6 id="top"&gt;&lt;/h6&gt;
 
 &lt;h3&gt;Table Of Content for post&lt;/h3&gt;
 &lt;p&gt;Skip to the relevant sections if needed.   &lt;/p&gt;
@@ -24,18 +24,18 @@
 &lt;h3&gt;Setting up different editors / tool for using &lt;code&gt;git mergetool&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;We have to change the &lt;code&gt;git config&lt;/code&gt; to set a default mergetool.
 In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git config merge.tool vimdiff      
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config merge.tool vimdiff      
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;We can also set the editor to display the common ancestor &lt;code&gt;BASE&lt;/code&gt; while we examine what changes are in &lt;code&gt;LOCAL&lt;/code&gt; and &lt;code&gt;REMOTE&lt;/code&gt; with the following setting:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git config merge.conflictstyle diff3  
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config merge.conflictstyle diff3  
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;Finding out what &lt;code&gt;mergetool&lt;/code&gt; editors are supported&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git mergetool --tool-help
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git mergetool --tool-help
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -55,7 +55,7 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;Or consult the community of your favorite editor to see how to do the equivalent operations for your editor.&lt;/p&gt;
 &lt;h4&gt;Other useful &lt;code&gt;mergetool&lt;/code&gt; settings&lt;/h4&gt;
 &lt;p&gt;Do not prompt before launching the merge resolution tool&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git config mergetool.prompt &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config mergetool.prompt &lt;span class="nb"&gt;false&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -64,10 +64,10 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/"&gt;Ref1 for the example&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://flaviusim.com/blog/how-to-do-a-git-merge-with-vim/"&gt;Ref2&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;creating the git repo&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ mkdir galaxyZoo
-$ &lt;span class="nb"&gt;cd&lt;/span&gt; galaxyZoo
-$ git init
-$ vim astrophy_obj.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir galaxyZoo
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;galaxyZoo
+&lt;span class="nv"&gt;$ &lt;/span&gt;git init
+&lt;span class="nv"&gt;$ &lt;/span&gt;vim astrophy_obj.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -81,24 +81,24 @@ irregular
 
 
 &lt;p&gt;save then commit the file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git add astrophy_obj.txt
-$ git commit -m &lt;span class="s1"&gt;&amp;#39;Initial commit&amp;#39;&lt;/span&gt;
-$ git branch astrophy_objects   &lt;span class="c1"&gt;# create a new branch&lt;/span&gt;
-$ git checkout astrophy_objects &lt;span class="c1"&gt;# change to new branch&lt;/span&gt;
-$ vim astrophy_obj.txt          &lt;span class="c1"&gt;# make changes to file &lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git add astrophy_obj.txt
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -m &lt;span class="s1"&gt;&amp;#39;Initial commit&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git branch astrophy_objects   &lt;span class="c"&gt;# create a new branch&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout astrophy_objects &lt;span class="c"&gt;# change to new branch&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;vim astrophy_obj.txt          &lt;span class="c"&gt;# make changes to file &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Change &lt;code&gt;bar&lt;/code&gt; to &lt;code&gt;barred&lt;/code&gt; in the file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git commit -am &lt;span class="s1"&gt;&amp;#39;changed bar to barred&amp;#39;&lt;/span&gt;
-$ git checkout master   &lt;span class="c1"&gt;# change back to master branch&lt;/span&gt;
-$ vim astrophy_obj.txt  
-&lt;span class="c1"&gt;# add the word `galaxy` to the end of each line using Vim REGEX &lt;/span&gt;
-&lt;span class="c1"&gt;# type `:%s/$/ galaxy/g` in Vim then press enter and save `:wq`&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -am &lt;span class="s1"&gt;&amp;#39;changed bar to barred&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout master   &lt;span class="c"&gt;# change back to master branch&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;vim astrophy_obj.txt  
+&lt;span class="c"&gt;# add the word `galaxy` to the end of each line using Vim REGEX &lt;/span&gt;
+&lt;span class="c"&gt;# type `:%s/$/ galaxy/g` in Vim then press enter and save `:wq`&lt;/span&gt;
 
-$ git commit -am &lt;span class="s1"&gt;&amp;#39;added galaxy to each line&amp;#39;&lt;/span&gt;
-&lt;span class="c1"&gt;# merge from the astrophy_objects branch to current branch, i.e. master&lt;/span&gt;
-$ git merge astrophy_objects  
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -am &lt;span class="s1"&gt;&amp;#39;added galaxy to each line&amp;#39;&lt;/span&gt;
+&lt;span class="c"&gt;# merge from the astrophy_objects branch to current branch, i.e. master&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git merge astrophy_objects  
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -110,7 +110,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 
 &lt;p&gt;We can bring up the &lt;code&gt;mergetool&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git mergetool
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git mergetool
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -147,12 +147,12 @@ or use &lt;code&gt;Vim&lt;/code&gt; shortcuts pull from one of the &lt;code&gt;L
 
 &lt;p&gt;save the changes then quit with &lt;code&gt;:wqa&lt;/code&gt; to close all the splits.
 Remember to commit the merge.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git commit -am &lt;span class="s1"&gt;&amp;#39;merged from several branches&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -am &lt;span class="s1"&gt;&amp;#39;merged from several branches&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Other tips: if you were trying to do a &lt;code&gt;git pull&lt;/code&gt; when you ran into &lt;code&gt;merge&lt;/code&gt; conflicts, issue &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git rebase –continue
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rebase –continue
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -169,7 +169,7 @@ Remember to commit the merge.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://git-scm.com/docs/git-mergetool"&gt;git mergetool page on git-scm.com&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://www.sbf5.com/~cduan/technical/git/git-3.shtml"&gt;tutorial about the concepts of branching and merging from Charles Duan&lt;/a&gt;     &lt;br /&gt;
 &lt;a href="http://vim.wikia.com/wiki/A_better_Vimdiff_Git_mergetool"&gt;more on vimdiff as a git mergetool&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Karen Y. Ng</dc:creator><pubDate>Fri, 25 Mar 2016 00:00:00 -0700</pubDate><guid>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</guid><category>Explain X in 10 minutes</category><category>reproducible science</category><category>Git</category></item><item><title>2015 mid-year status and goals</title><link>http://karenyyng.github.io/2015-mid-year-status-and-goals.html</link><description>&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Karen Y. Ng</dc:creator><pubDate>Mon, 30 May 2016 00:00:00 -0700</pubDate><guid>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</guid><category>Explain X in 10 minutes</category><category>reproducible science</category><category>Git</category></item><item><title>2015 mid-year status and goals</title><link>http://karenyyng.github.io/2015-mid-year-status-and-goals.html</link><description>&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;slight stylistic &lt;code&gt;CSS&lt;/code&gt; change (finally know which &lt;code&gt;CSS&lt;/code&gt; to fix)&lt;/li&gt;
 &lt;li&gt;fixing &lt;code&gt;jQuery&lt;/code&gt; plugin for returning search results properly&lt;/li&gt;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>From data to insights</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/all-en.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2016-03-25T00:00:00-07:00</updated><entry><title>Git mergetool tutorial</title><link href="http://karenyyng.github.io/git-mergetool-tutorial.html" rel="alternate"></link><updated>2016-03-25T00:00:00-07:00</updated><author><name>Karen Y. Ng</name></author><id>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</id><summary type="html">&lt;h6 id="top"&gt;&lt;/h6&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>From data to insights</title><link href="http://karenyyng.github.io/" rel="alternate"></link><link href="http://karenyyng.github.io/feeds/all-en.atom.xml" rel="self"></link><id>http://karenyyng.github.io/</id><updated>2016-05-30T00:00:00-07:00</updated><entry><title>Git mergetool tutorial</title><link href="http://karenyyng.github.io/git-mergetool-tutorial.html" rel="alternate"></link><updated>2016-05-30T00:00:00-07:00</updated><author><name>Karen Y. Ng</name></author><id>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</id><summary type="html">&lt;h6 id="top"&gt;&lt;/h6&gt;
 
 &lt;h3&gt;Table Of Content for post&lt;/h3&gt;
 &lt;p&gt;Skip to the relevant sections if needed.   &lt;/p&gt;
@@ -24,18 +24,18 @@
 &lt;h3&gt;Setting up different editors / tool for using &lt;code&gt;git mergetool&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;We have to change the &lt;code&gt;git config&lt;/code&gt; to set a default mergetool.
 In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git config merge.tool vimdiff      
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config merge.tool vimdiff      
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;We can also set the editor to display the common ancestor &lt;code&gt;BASE&lt;/code&gt; while we examine what changes are in &lt;code&gt;LOCAL&lt;/code&gt; and &lt;code&gt;REMOTE&lt;/code&gt; with the following setting:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git config merge.conflictstyle diff3  
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config merge.conflictstyle diff3  
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;Finding out what &lt;code&gt;mergetool&lt;/code&gt; editors are supported&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git mergetool --tool-help
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git mergetool --tool-help
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -55,7 +55,7 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;Or consult the community of your favorite editor to see how to do the equivalent operations for your editor.&lt;/p&gt;
 &lt;h4&gt;Other useful &lt;code&gt;mergetool&lt;/code&gt; settings&lt;/h4&gt;
 &lt;p&gt;Do not prompt before launching the merge resolution tool&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git config mergetool.prompt &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config mergetool.prompt &lt;span class="nb"&gt;false&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -64,10 +64,10 @@ In this example, we will use &lt;code&gt;vimdiff&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/"&gt;Ref1 for the example&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://flaviusim.com/blog/how-to-do-a-git-merge-with-vim/"&gt;Ref2&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;creating the git repo&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ mkdir galaxyZoo
-$ &lt;span class="nb"&gt;cd&lt;/span&gt; galaxyZoo
-$ git init
-$ vim astrophy_obj.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir galaxyZoo
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;galaxyZoo
+&lt;span class="nv"&gt;$ &lt;/span&gt;git init
+&lt;span class="nv"&gt;$ &lt;/span&gt;vim astrophy_obj.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -81,24 +81,24 @@ irregular
 
 
 &lt;p&gt;save then commit the file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git add astrophy_obj.txt
-$ git commit -m &lt;span class="s1"&gt;&amp;#39;Initial commit&amp;#39;&lt;/span&gt;
-$ git branch astrophy_objects   &lt;span class="c1"&gt;# create a new branch&lt;/span&gt;
-$ git checkout astrophy_objects &lt;span class="c1"&gt;# change to new branch&lt;/span&gt;
-$ vim astrophy_obj.txt          &lt;span class="c1"&gt;# make changes to file &lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git add astrophy_obj.txt
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -m &lt;span class="s1"&gt;&amp;#39;Initial commit&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git branch astrophy_objects   &lt;span class="c"&gt;# create a new branch&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout astrophy_objects &lt;span class="c"&gt;# change to new branch&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;vim astrophy_obj.txt          &lt;span class="c"&gt;# make changes to file &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Change &lt;code&gt;bar&lt;/code&gt; to &lt;code&gt;barred&lt;/code&gt; in the file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git commit -am &lt;span class="s1"&gt;&amp;#39;changed bar to barred&amp;#39;&lt;/span&gt;
-$ git checkout master   &lt;span class="c1"&gt;# change back to master branch&lt;/span&gt;
-$ vim astrophy_obj.txt  
-&lt;span class="c1"&gt;# add the word `galaxy` to the end of each line using Vim REGEX &lt;/span&gt;
-&lt;span class="c1"&gt;# type `:%s/$/ galaxy/g` in Vim then press enter and save `:wq`&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -am &lt;span class="s1"&gt;&amp;#39;changed bar to barred&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout master   &lt;span class="c"&gt;# change back to master branch&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;vim astrophy_obj.txt  
+&lt;span class="c"&gt;# add the word `galaxy` to the end of each line using Vim REGEX &lt;/span&gt;
+&lt;span class="c"&gt;# type `:%s/$/ galaxy/g` in Vim then press enter and save `:wq`&lt;/span&gt;
 
-$ git commit -am &lt;span class="s1"&gt;&amp;#39;added galaxy to each line&amp;#39;&lt;/span&gt;
-&lt;span class="c1"&gt;# merge from the astrophy_objects branch to current branch, i.e. master&lt;/span&gt;
-$ git merge astrophy_objects  
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -am &lt;span class="s1"&gt;&amp;#39;added galaxy to each line&amp;#39;&lt;/span&gt;
+&lt;span class="c"&gt;# merge from the astrophy_objects branch to current branch, i.e. master&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git merge astrophy_objects  
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -110,7 +110,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 
 &lt;p&gt;We can bring up the &lt;code&gt;mergetool&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git mergetool
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git mergetool
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -147,12 +147,12 @@ or use &lt;code&gt;Vim&lt;/code&gt; shortcuts pull from one of the &lt;code&gt;L
 
 &lt;p&gt;save the changes then quit with &lt;code&gt;:wqa&lt;/code&gt; to close all the splits.
 Remember to commit the merge.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git commit -am &lt;span class="s1"&gt;&amp;#39;merged from several branches&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -am &lt;span class="s1"&gt;&amp;#39;merged from several branches&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Other tips: if you were trying to do a &lt;code&gt;git pull&lt;/code&gt; when you ran into &lt;code&gt;merge&lt;/code&gt; conflicts, issue &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ git rebase –continue
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rebase –continue
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -235,7 +235,7 @@ I also assume you know some basic shell commands.&lt;/p&gt;
 &lt;h3&gt;How to create virtualenv&lt;/h3&gt;
 &lt;p&gt;If you just want to use virtualenv for the same version python as the
 system wide version, at a terminal, call the executable of virtualenv:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ virtualenv-27 --no-site-packages ENVNAME
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv-27 --no-site-packages ENVNAME
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -253,7 +253,7 @@ virtualenv will not work properly so you will want to remove any system
 wide python packages from your &lt;code&gt;PYTHONPATH&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Once the command above is done executing, a folder with ENVNAME will be created that has the structure for installing its own set of python packages.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ ls ENVNAME
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ls ENVNAME
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -270,7 +270,7 @@ more specifically inside: &lt;/p&gt;
 
 
 &lt;p&gt;Now let’s try to activate the virtual env:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; APPROPRIATE_PATH/ENVNAME/bin/activate
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;source &lt;/span&gt;APPROPRIATE_PATH/ENVNAME/bin/activate
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -296,7 +296,7 @@ packages you want.&lt;/p&gt;
 project and you want to save the package used and the respective version.
 We can have the pip list all the python packages you have
 installed and save it somewhere&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;ENVNAME&lt;span class="o"&gt;)&lt;/span&gt;$ pip freeze &amp;gt; packages.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;ENVNAME&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip freeze &amp;gt; packages.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -304,18 +304,18 @@ installed and save it somewhere&lt;/p&gt;
 machine.
 Now you can copy over "packages.txt", set up the machine using the steps
 above, then reinstall your packages within this local environment:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;ENVNAME&lt;span class="o"&gt;)&lt;/span&gt;$ pip install -r packages.txt
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;ENVNAME&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install -r packages.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;which may or may not work well depending on if you have external source of packages.&lt;/p&gt;
 &lt;p&gt;Let’s say you are like me and have installed some python packages from non-conventional sources, one hackish way to make sure those will be installed properly in the virtualenv is to just copy the directory containing installed python packages to the local environment:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;ENVNAME&lt;span class="o"&gt;)&lt;/span&gt;$ sudo cp -r PATH1 APPROPRAITE_PATH/ENVNAME/python2.7/site-packages
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;ENVNAME&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo cp -r PATH1 APPROPRAITE_PATH/ENVNAME/python2.7/site-packages
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;where &lt;code&gt;PATH1&lt;/code&gt; is&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; PATH1
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo &lt;/span&gt;PATH1
 &lt;span class="s2"&gt;&amp;quot;/TIME_MACHINE_BACKUP/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python/2.7/site-packages/&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -324,7 +324,7 @@ above, then reinstall your packages within this local environment:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ENVNAME&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;ipython&lt;/span&gt;
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;astropy&lt;/span&gt;
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;astropy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__version__&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;0.4&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;0.4&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -334,7 +334,7 @@ different version after deactivating the virtual env&lt;/p&gt;
 &lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;ipython&lt;/span&gt;
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;astropy&lt;/span&gt;
 &lt;span class="n"&gt;In&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;astropy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__version__&lt;/span&gt;
-&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;0.4.1&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;Out&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;0.4.1&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -342,10 +342,10 @@ different version after deactivating the virtual env&lt;/p&gt;
 &lt;p&gt;Last bit of this post is about being lazy and having the virtualenv automatically activate itself
 when you switch to the appropriate directory using command line.&lt;/p&gt;
 &lt;p&gt;You will need the python package &lt;code&gt;autoenv&lt;/code&gt; which can be installed by:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ pip install autoenv
-$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;source &lt;/span&gt;$&lt;span class="s2"&gt;PATH_TO_AUTOENV/activate.sh&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile
-$ &lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$A&lt;/span&gt;PPROPRIATE_PATH/ &lt;span class="c1"&gt;# this is the parent directory where ENVNAME lives&lt;/span&gt;
-$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;source ABSOLUTE_PATH/ENVNAME/bin/activate&amp;quot;&lt;/span&gt; &amp;gt; .env
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install autoenv
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;source &lt;/span&gt;&lt;span class="nv"&gt;$PATH_TO_AUTOENV&lt;/span&gt;&lt;span class="s2"&gt;/activate.sh&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$APPROPRIATE_PATH&lt;/span&gt;/ &lt;span class="c"&gt;# this is the parent directory where ENVNAME lives&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;source ABSOLUTE_PATH/ENVNAME/bin/activate&amp;quot;&lt;/span&gt; &amp;gt; .env
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -360,13 +360,13 @@ installed from within the virtualenv and not the system version.&lt;/p&gt;
 &lt;p&gt;let's say that I use python 2.7 for most of my projects and 
 would like to play with python 3.4 i can first install python version 3.4
 using macport by:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ sudo port install python34 py34-pip
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo port install python34 py34-pip
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;then the only difference when creating the virtualenv is to specify using
 python 3.4&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ virtualenv -p &lt;span class="k"&gt;$(&lt;/span&gt;which python3.4&lt;span class="k"&gt;)&lt;/span&gt; ENVNAME --distribute
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;virtualenv -p &lt;span class="k"&gt;$(&lt;/span&gt;which python3.4&lt;span class="k"&gt;)&lt;/span&gt; ENVNAME --distribute
 &lt;/pre&gt;&lt;/div&gt;
 
 
