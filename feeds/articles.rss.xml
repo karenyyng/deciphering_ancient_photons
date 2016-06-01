@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 30 May 2016 00:00:00 -0700</lastBuildDate><item><title>Git mergetool tutorial</title><link>http://karenyyng.github.io/git-mergetool-tutorial.html</link><description>&lt;h6 id="top"&gt;&lt;/h6&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>http://karenyyng.github.io/</link><description></description><atom:link href="http://karenyyng.github.io/feeds/articles.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 00:00:00 -0700</lastBuildDate><item><title>Git mergetool tutorial</title><link>http://karenyyng.github.io/git-mergetool-tutorial.html</link><description>&lt;h6 id="top"&gt;&lt;/h6&gt;
 
 &lt;h3&gt;Table Of Content for post&lt;/h3&gt;
 &lt;p&gt;Skip to the relevant sections if needed.   &lt;/p&gt;
@@ -169,7 +169,7 @@ Remember to commit the merge.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://git-scm.com/docs/git-mergetool"&gt;git mergetool page on git-scm.com&lt;/a&gt; &lt;br /&gt;
 &lt;a href="http://www.sbf5.com/~cduan/technical/git/git-3.shtml"&gt;tutorial about the concepts of branching and merging from Charles Duan&lt;/a&gt;     &lt;br /&gt;
 &lt;a href="http://vim.wikia.com/wiki/A_better_Vimdiff_Git_mergetool"&gt;more on vimdiff as a git mergetool&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Karen Y. Ng</dc:creator><pubDate>Mon, 30 May 2016 00:00:00 -0700</pubDate><guid>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</guid><category>Explain X in 10 minutes</category><category>reproducible science</category><category>Git</category></item><item><title>2015 mid-year status and goals</title><link>http://karenyyng.github.io/2015-mid-year-status-and-goals.html</link><description>&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;back to top&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Karen Y. Ng</dc:creator><pubDate>Tue, 31 May 2016 00:00:00 -0700</pubDate><guid>tag:karenyyng.github.io,2015-09-20:git-mergetool-tutorial.html</guid><category>Explain X in 10 minutes</category><category>reproducible science</category><category>Git</category></item><item><title>2015 mid-year status and goals</title><link>http://karenyyng.github.io/2015-mid-year-status-and-goals.html</link><description>&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;slight stylistic &lt;code&gt;CSS&lt;/code&gt; change (finally know which &lt;code&gt;CSS&lt;/code&gt; to fix)&lt;/li&gt;
 &lt;li&gt;fixing &lt;code&gt;jQuery&lt;/code&gt; plugin for returning search results properly&lt;/li&gt;

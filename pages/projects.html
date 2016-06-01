@@ -13,13 +13,13 @@
 <link rel="canonical" href="http://karenyyng.github.io/pages/projects.html">
 
         <meta name="author" content="Karen Y. Ng" />
-        <meta name="description" content="I am working towards my PhD under the supervision of Prof. David Wittman at UC Davis. A main part of my thesis is for understanding the manifestation of dark matter properties in the extreme environment of mergers of galaxy clusters. Mergers of galaxy clusters are some of the most energetic ..." />
+        <meta name="description" content="I am a Physics PhD candidate. My main thesis is about analyzing astronomical data. Check out my comprehensive Data Science skillset from my Data Science portfolio below: Data presentation skills Visualization skills link to accurate scientific visualization of telescope data This website is written in markdown and parsed to a ..." />
 
     <meta property="og:site_name" content="From data to insights" />
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Projects"/>
     <meta property="og:url" content="http://karenyyng.github.io/pages/projects.html"/>
-    <meta property="og:description" content="I am working towards my PhD under the supervision of Prof. David Wittman at UC Davis. A main part of my thesis is for understanding the manifestation of dark matter properties in the extreme environment of mergers of galaxy clusters. Mergers of galaxy clusters are some of the most energetic ..." />
+    <meta property="og:description" content="I am a Physics PhD candidate. My main thesis is about analyzing astronomical data. Check out my comprehensive Data Science skillset from my Data Science portfolio below: Data presentation skills Visualization skills link to accurate scientific visualization of telescope data This website is written in markdown and parsed to a ..." />
 
 
     <!-- Bootstrap -->
@@ -78,39 +78,135 @@ From data to insights            </a>
         <h1 class="entry-title">Projects</h1>
         
         <div class="entry-content">
-            <p>I am working towards my PhD under the supervision of Prof. David Wittman
-at UC Davis. A main part of my thesis is for understanding the
-manifestation of <code>dark matter</code> properties in the extreme environment of 
-mergers of <code>galaxy clusters</code>.<br />
-Mergers of <code>galaxy clusters</code> are some of the most energetic events in the
-universe that are observable
-in a large range of wavelengths (of light). Combining data with multiple
-telescopes, we provide comprehensive analyses of how the merger
-happened even though we only have snapshots of the merger process.<br />
-Check out my work with other great astrophysicists in the 
-<code>Merging Cluster
-Collaboration</code> by visiting <a href="http://www.mergingclustercollaboration.org/">our website</a> .</p>
+            <p>I am a Physics PhD candidate. My main thesis is about analyzing astronomical 
+data. Check out my comprehensive Data Science skillset from my Data Science 
+portfolio below: </p>
+<h1>Data presentation skills</h1>
+<h2>Visualization skills</h2>
+<ul>
+<li>
+<p><a href="#ElGordo_vis">link</a> to 
+accurate scientific visualization of telescope data </p>
+</li>
+<li>
+<p>This website is written in <code>markdown</code> and parsed to a working website with <code>Python Pelican</code></p>
+</li>
+</ul>
+<h1>Software engineering</h1>
+<h2>performance profiling</h2>
+<ul>
+<li><a href="http://nbviewer.jupyter.org/github/karenyng/HW2_Stat250_W14/blob/master/writeup/Stat250%20W14%20HW2.ipynb?create=1#Method-1:-Parallelization-in-python">link1</a> 
+to the different scaling plots from performance profiling (in <code>Python</code>) for 
+reading 51 GB of CSV files in parallel  </li>
+<li><a href="http://nbviewer.jupyter.org/github/karenyng/HW1_Stat250_Winter14/blob/master/writeup/hw1.ipynb?create=1#Discussion">link2</a> 
+to the single threaded version code for reading the same 51 GB of CSV files  with three approaches, 1) <code>Python Pandas</code>, 2) <code>R</code> with <code>Bash</code> and 3) the
+<code>R</code> package <code>FastCSVSample</code></li>
+<li><a href="/images/GP/vtune_profile.png">link3</a> to a visualiation of the log file from the <code>Intel Vtune</code> profiler tool. 
+I was able to get rid of a performance bottleneck using the information of the visualization and speeding up the code by at least 10 times.</li>
+</ul>
+<h1>Statistical and Machine Learning skills</h1>
+<h2>Clustering</h2>
+<ul>
+<li><a href="#GMM">link</a> to Gaussian mixture clustering for separating different
+    populations of data (signal vs noise from foreground and background) </li>
+</ul>
+<h2>Regression</h2>
+<ul>
+<li><a href="https://github.com/karenyyng/shear_gp">link</a> to a custom-built Gaussian process for to encapsulate the
+   properties of the problem setting. The code was written with <code>Python, C++</code>
+   and <code>Cython</code>. The parallelization was achieved with <code>OpenMP</code> and <code>Intel Math Kernel Library</code>.</li>
+</ul>
+<h2>Model comparison / hypothesis testing</h2>
+<ul>
+<li><a href="#Bayes_factor">link</a> to model comparison by computing the Bayes factor </li>
+<li><a href="#Bayesian_information_criteria">link</a> to determining model complexity of
+  a Gaussian Mixture Model</li>
+</ul>
+<h2>Data query (SQL) / wrangling / scraping</h2>
+<ul>
+<li><a href="https://github.com/karenyyng/spack_python_package_parser">link</a> to an add-on to a Supercomputer Package (Spack) for querying the 
+<code>https://pypi.python.org/pypi</code> Python package indices and parsing the installation recipes for Python packages </li>
+<li><a href="https://github.com/karenyyng/shear_gp/tree/master/data_access">link</a> to a Python script that queries a <code>MySQL</code> database and returns a
+    <code>Pandas dataframe</code></li>
+</ul>
 <p><br></p>
 <hr />
-<h2>PhD project 1</h2>
+<h2>PhD project 1 <a href="https://github.com/karenyyng/ElGordo_paper1">Link to GitHub repository</a></h2>
+<p><a id="ElGordo_vis"></a> </p>
 <h3>understanding the dynamics of a merging galaxy cluster</h3>
-<p>We model the bimodal merger of the <code>galaxy cluster</code> with a <code>Monte Carlo
-simulation</code>. By making use of the merger <code>shockwave</code> observation in the radio
+<h4>Accurate scientific visualization 1</h4>
+<p><img src="/images/ElGordo/observed_data.png" width="75%" height="75%"/>    </p>
+<p>Fig.1  Accurate scientific visualization of the galaxy cluster El Gordo by 
+overlaying inferred information on <code>Hubble Space Telescope</code> data. 
+The two components of Dark Matter are marked by the blue crosses (<code>northwest (NW)</code> and <code>southeast
+(SE)</code> ). I have also added contours of the gas component from the 
+X-ray data in red. The white dashed lines indicate the locations where 
+shockwaves (relics) were detected in the radio wavelengths. All these
+observables help confirm that the components of the galaxy cluster went through
+a merger.</p>
+<p><br></p>
+<p>By making use of the merger <code>shockwave</code> observation in the radio
 wavelengths, we show that two main <code>dark matter</code> components of this
 particular <code>galaxy cluster</code> are likely to be moving towards one another for a
-second merger.  </p>
-<p><img alt="El Gordo The observed data through the Hubble Space
-Telescope" src="/images/ElGordo/observed_data.png" /></p>
+second merger (the returning scenario is more likely than the outgoing scenario).<br />
+<br></p>
 <p><img alt="El Gordo - a massive galaxy cluster that I
 studied." src="/images/ElGordo_merger_cartoon.png" />   <br />
 Fig. 2 of my paper - Illustration of the spatial location of different
 components of the merger cluster <code>El Gordo</code> at different stages of the 
-merger.   </p>
+merger. <br />
+<br></p>
+<p><img src="/images/ElGordo/confidence_regions.png" width="75%" height="75%"/>  <br />
+Fig. 3 the marginal distribution of the estimated time-since-pericenter (TSP)
+for the two merger scenarios (<code>ret</code> for returning and <code>out</code> for outgoing) and
+the periodicity T. The shaded region are the 68% and the 95% confidence
+intervals for the 1D marginal distribution on the diagonal subplots in the
+triangular plots. 
+<a id="Bayes_factor"></a> 
+<br></p>
+<p><img src="/images/ElGordo/Bayes_factor_computation.png" width="75%" height="75%"/>  <br />
+Fig. 4 Visualization of the conditional probability distribution of the
+possible shockwave (relic) location vs the observed location. The observation
+in red favors the returning scenario.
+<br></p>
 <p>The published version of my paper titled 'The return of the merging galaxy
 cluster of El Gordo?' can be found on the journal website
 <a href="http://mnras.oxfordjournals.org/lookup/doi/10.1093/mnras/stv1713">here</a>.</p>
 <p>A free version of my published paper can be found on
 <a href="http://arxiv.org/abs/1412.1826">ArXiV</a>.          </p>
+<h2>Hack session analysis from the unconference AstroHack week 2014</h2>
+<h3>Goal: separate the signal from foreground and background</h3>
+<p><img alt="Original data that is contaminated with foreground and background
+noise" src="/images/GMM/kernel_density_estimation.png" />  <br />
+Density estimation of the galaxy data (discrete data) that is contaminated by
+foreground and background noise.
+<a id="GMM"></a> 
+<br>
+<br></p>
+<p><img alt="Original data that is contaminated with foreground and background
+noise" src="/images/GMM/3_cluster_GMM_results.png" /> <br />
+The Gaussian mixture model (GMM) result that separates the data into 3
+population, i.e. signal (red), background (blue) and other noise (green). 
+<br>
+<br></p>
+<p><img alt="Original data that is contaminated with foreground and background
+noise" src="/images/GMM/GMM_3_cluster_signal.png" /> <br />
+The "signal" cluster in red from the 3-component GMM model still seems 
+contaminated.</p>
+<p><a id="Bayesian_information_criteria"></a> 
+<br>
+<br></p>
+<p><img alt="Original data that is contaminated with foreground and background
+noise" src="/images/GMM/Bayesian_information_criteria.png" /> <br />
+The Bayesian information criteria (BIC) uses both the likelihood and the model
+complexity to measure how many components of the Gaussian Mixture Model (GMM)
+would best explain the data. The lower the score, the better the model is.
+<br>
+<br>
+<img alt="Original data that is contaminated with foreground and background
+noise" src="/images/GMM/GMM_7_cluster_signal.png" /> <br />
+The spatial distribution inferred by the 7-component Gaussian Mixture Model is
+tighter and has lower false positive rate.</p>
 <p><br></p>
 <hr />
 <h2>PhD project 2 (ongoing work)</h2>
@@ -120,7 +216,8 @@ from background galaxies. This work is the first to model the dark matter
 density with a Gaussian Process (from which gaussian random fields are drawn). </p>
 <p>I am employed as a graduate research assistant for 6 months at the National Energy Research
 Scientific Computing (NERSC), Lawrence Berkeley National Laboratory for this project. 
-We are actively working on innovative approaches to scale up the computation to handle more than millions of data points.
+We are actively working on innovative approaches to scale up the computation.
+My first publication of this project is in preparation.
 <br></p>
 <hr />
 <h2>PhD project 3 (ongoing work)</h2>
@@ -189,23 +286,23 @@ ApJ, 785, 20, 1309.5097, <a href="http://stacks.iop.org/0004-637X/785/i=1/a=20?k
             <li class="list-group-item"><a href="http://karenyyng.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://karenyyng.github.io/tag/astronomy.html">
-                            astronomy
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="http://karenyyng.github.io/tag/python.html">
                             Python
                         </a>
                     </li>
-                    <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/cosmology.html">
-                            cosmology
+                    <li class="list-group-item tag-1">
+                        <a href="http://karenyyng.github.io/tag/astronomy.html">
+                            astronomy
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
                         <a href="http://karenyyng.github.io/tag/reproducible-science.html">
                             reproducible science
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://karenyyng.github.io/tag/cosmology.html">
+                            cosmology
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
