@@ -13,13 +13,13 @@
 <link rel="canonical" href="http://karenyyng.github.io/pages/projects.html">
 
         <meta name="author" content="Karen Y. Ng" />
-        <meta name="description" content="I am a Physics PhD candidate. My main thesis is about analyzing astronomical data. Check out my comprehensive Data Science skillset from my Data Science portfolio below: Data presentation skills Visualization skills link to accurate scientific visualization of telescope data This website is written in markdown and parsed to a ..." />
+        <meta name="description" content="I am a Physics PhD candidate. My main thesis is about analyzing astronomical data. Check out my comprehensive Data Science skillset from my portfolio below: Data presentation skills Visualization skills link to accurate scientific visualization of telescope data This website is written in markdown and parsed to a working website ..." />
 
     <meta property="og:site_name" content="From data to insights" />
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Projects"/>
     <meta property="og:url" content="http://karenyyng.github.io/pages/projects.html"/>
-    <meta property="og:description" content="I am a Physics PhD candidate. My main thesis is about analyzing astronomical data. Check out my comprehensive Data Science skillset from my Data Science portfolio below: Data presentation skills Visualization skills link to accurate scientific visualization of telescope data This website is written in markdown and parsed to a ..." />
+    <meta property="og:description" content="I am a Physics PhD candidate. My main thesis is about analyzing astronomical data. Check out my comprehensive Data Science skillset from my portfolio below: Data presentation skills Visualization skills link to accurate scientific visualization of telescope data This website is written in markdown and parsed to a working website ..." />
 
 
     <!-- Bootstrap -->
@@ -79,7 +79,7 @@ From data to insights            </a>
         
         <div class="entry-content">
             <p>I am a Physics PhD candidate. My main thesis is about analyzing astronomical 
-data. Check out my comprehensive Data Science skillset from my Data Science 
+data. Check out my comprehensive Data Science skillset from my 
 portfolio below: </p>
 <h1>Data presentation skills</h1>
 <h2>Visualization skills</h2>
@@ -110,11 +110,13 @@ I was able to get rid of a performance bottleneck using the information of the v
 <li><a href="#GMM">link</a> to Gaussian mixture clustering for separating different
     populations of data (signal vs noise from foreground and background) </li>
 </ul>
-<h2>Regression</h2>
+<h2>Regression - optimization</h2>
 <ul>
-<li><a href="https://github.com/karenyyng/shear_gp">link</a> to a custom-built Gaussian process for to encapsulate the
+<li><a href="https://github.com/karenyyng/shear_gp">link</a> to a custom-built <code>Gaussian process</code> for to encapsulate the
    properties of the problem setting. The code was written with <code>Python, C++</code>
-   and <code>Cython</code>. The parallelization was achieved with <code>OpenMP</code> and <code>Intel Math Kernel Library</code>.</li>
+   and <code>Cython</code>. The parallelization was achieved with <code>OpenMP</code> and <code>Intel Math Kernel Library</code>.
+   <code>Gaussian Process</code> is an powerful, flexible statistical algorithm. An important
+   use case of <code>Gaussian Process</code> is for tuning the hyperparameters of Machine Learning algorithms such as neural networks (<a href="https://papers.nips.cc/paper/4522-practical-bayesian-optimization-of-machine-learning-algorithms.pd://papers.nips.cc/paper/4522-practical-bayesian-optimization-of-machine-learning-algorithms.pdf">link</a> to a related NIPS publication). </li>
 </ul>
 <h2>Model comparison / hypothesis testing</h2>
 <ul>
@@ -174,19 +176,21 @@ cluster of El Gordo?' can be found on the journal website
 <a href="http://mnras.oxfordjournals.org/lookup/doi/10.1093/mnras/stv1713">here</a>.</p>
 <p>A free version of my published paper can be found on
 <a href="http://arxiv.org/abs/1412.1826">ArXiV</a>.          </p>
+<p><a id="GMM"></a> </p>
 <h2>Hack session analysis from the unconference AstroHack week 2014</h2>
-<h3>Goal: separate the signal from foreground and background</h3>
+<h3>Goal: separate the signal from foreground and background using Gaussian Mixture Model</h3>
 <p><img alt="Original data that is contaminated with foreground and background
 noise" src="/images/GMM/kernel_density_estimation.png" />  <br />
-Density estimation of the galaxy data (discrete data) that is contaminated by
+Original smoothed (discrete) galaxy data that is contaminated by
 foreground and background noise.
-<a id="GMM"></a> 
 <br>
 <br></p>
 <p><img alt="Original data that is contaminated with foreground and background
 noise" src="/images/GMM/3_cluster_GMM_results.png" /> <br />
-The Gaussian mixture model (GMM) result that separates the data into 3
-population, i.e. signal (red), background (blue) and other noise (green). 
+The Gaussian mixture model (GMM) that separates the data into 3
+population, i.e. signal (red), background (blue) and other noise (green). </p>
+<p>The left plot is the shape of the actual mixture, the right panel shows the
+feature space that has physical meaning.
 <br>
 <br></p>
 <p><img alt="Original data that is contaminated with foreground and background
@@ -296,8 +300,8 @@ ApJ, 785, 20, 1309.5097, <a href="http://stacks.iop.org/0004-637X/785/i=1/a=20?k
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
-                            reproducible science
+                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
+                            favorite book
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -306,8 +310,8 @@ ApJ, 785, 20, 1309.5097, <a href="http://stacks.iop.org/0004-637X/785/i=1/a=20?k
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
-                        <a href="http://karenyyng.github.io/tag/favorite-book.html">
-                            favorite book
+                        <a href="http://karenyyng.github.io/tag/reproducible-science.html">
+                            reproducible science
                         </a>
                     </li>
                 </ul>
