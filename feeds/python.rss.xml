@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>https://karenyyng.github.io/</link><description></description><atom:link href="https://karenyyng.github.io/feeds/python.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 24 Dec 2014 18:30:00 -0800</lastBuildDate><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>https://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>https://karenyyng.github.io/</link><description></description><atom:link href="https://karenyyng.github.io/feeds/python.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 24 Dec 2014 18:30:00 -0800</lastBuildDate><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>https://karenyyng.github.io/posts/using_virtualenv.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
 &lt;p&gt;It’s a tragedy whenever a code breaks after a software “update”.
 I have recently started using virtualenv for python to prevent my
 macport / apt-get updates from messing up the code of my research projects.
@@ -159,4 +159,4 @@ python 3.4&lt;/p&gt;
 &lt;h3&gt;Other virtualenv tutorials&lt;/h3&gt;
 &lt;p&gt;There is a wonderful tutorial from
 &lt;a href="http://docs.astropy.org/en/stable/development/workflow/virtual_pythons.html#virtual-envs"&gt;astropy.&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</guid><category>Python</category><category>reproducible science</category></item></channel></rss>
+&lt;hr /&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:posts/using_virtualenv.html</guid><category>Python</category><category>reproducible science</category></item></channel></rss>

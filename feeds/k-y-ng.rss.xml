@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>https://karenyyng.github.io/</link><description></description><atom:link href="https://karenyyng.github.io/feeds/k-y-ng.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 22 Apr 2015 00:44:01 -0700</lastBuildDate><item><title>2015 mid-year status and goals</title><link>https://karenyyng.github.io/2015-mid-year-status-and-goals.html</link><description>&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>From data to insights</title><link>https://karenyyng.github.io/</link><description></description><atom:link href="https://karenyyng.github.io/feeds/k-y-ng.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 22 Apr 2015 00:44:01 -0700</lastBuildDate><item><title>2015 mid-year status and goals</title><link>https://karenyyng.github.io/posts/learning_schedule_mid2015.html</link><description>&lt;p&gt;I have been making incremental improvements to the blog, including:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;slight stylistic &lt;code&gt;CSS&lt;/code&gt; change (finally know which &lt;code&gt;CSS&lt;/code&gt; to fix)&lt;/li&gt;
 &lt;li&gt;fixing &lt;code&gt;jQuery&lt;/code&gt; plugin for returning search results properly&lt;/li&gt;
@@ -43,7 +43,7 @@ Models" src="http://ecx.images-amazon.com/images/I/519gJUTbWwL.jpg" /&gt;   &lt;
 actually practise doing data analysis with &lt;a href="http://www.kaggle.com/competitions"&gt;Kaggle
 competitions&lt;/a&gt; but I should focus!
 I am giving myself half a year's time from now just to learn as much about PGM /
-Bayesian stat. related stuff as possible before diving into Kaggle.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 22 Apr 2015 00:44:01 -0700</pubDate><guid>tag:karenyyng.github.io,2015-04-22:2015-mid-year-status-and-goals.html</guid><category>Personal goals</category><category>favorite book</category></item><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>https://karenyyng.github.io/using-virtualenv-for-safeguarding-research-project-dependencies.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
+Bayesian stat. related stuff as possible before diving into Kaggle.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 22 Apr 2015 00:44:01 -0700</pubDate><guid>tag:karenyyng.github.io,2015-04-22:posts/learning_schedule_mid2015.html</guid><category>Personal goals</category><category>favorite book</category></item><item><title>Using Virtualenv for safeguarding research project dependencies</title><link>https://karenyyng.github.io/posts/using_virtualenv.html</link><description>&lt;h3&gt;Why virtualenv&lt;/h3&gt;
 &lt;p&gt;It’s a tragedy whenever a code breaks after a software “update”.
 I have recently started using virtualenv for python to prevent my
 macport / apt-get updates from messing up the code of my research projects.
@@ -203,9 +203,9 @@ python 3.4&lt;/p&gt;
 &lt;h3&gt;Other virtualenv tutorials&lt;/h3&gt;
 &lt;p&gt;There is a wonderful tutorial from
 &lt;a href="http://docs.astropy.org/en/stable/development/workflow/virtual_pythons.html#virtual-envs"&gt;astropy.&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:using-virtualenv-for-safeguarding-research-project-dependencies.html</guid><category>Python</category><category>reproducible science</category></item><item><title>New year resolution + 1st post</title><link>https://karenyyng.github.io/new-year-resolution-1st-post.html</link><description>&lt;p&gt;One thing that I greatly admire my advisor, Prof. D. Wittman, is that he 
+&lt;hr /&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 18:30:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:posts/using_virtualenv.html</guid><category>Python</category><category>reproducible science</category></item><item><title>New year resolution + 1st post</title><link>https://karenyyng.github.io/posts/first_post.html</link><description>&lt;p&gt;One thing that I greatly admire my advisor, Prof. D. Wittman, is that he 
 explains things very clearly.&lt;br /&gt;
 Now as a science student I think this is a very important ability that I
 still need to improve on. By setting up this blog I hope to force myself
 to explain and share with others the mini-projects / ideas that I am
-working / have worked on. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 17:00:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:new-year-resolution-1st-post.html</guid></item></channel></rss>
+working / have worked on. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">K. Y. Ng</dc:creator><pubDate>Wed, 24 Dec 2014 17:00:00 -0800</pubDate><guid>tag:karenyyng.github.io,2014-12-24:posts/first_post.html</guid></item></channel></rss>
